@@ -6,60 +6,42 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:09:51 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/08 16:18:37 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/08 17:56:11 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	print_int(int n)
+static t_list	*lstget_at(t_list *list, size_t index)
 {
-	char	c;
-
-	if (n >= 10)
-		print_int(n / 10);
-	c = (n % 10) + '0';
-	write(1, &c, 1);
+	while (list && index--)
+		list = list->next;
+	return (list);
 }
 
-static t_node	*expand_stack(t_node *previous_node, int value)
+double	compute_disorder(t_list *stack)
 {
-	t_node	*node;
+	t_list	*a;
+	t_list	*b;
+	int		mistakes;
+	int		total_pairs;
 
-	node = malloc(sizeof(t_node));
-	if (!node)
-		return (NULL);
-	node->value = value;
-	node->next = previous_node;
-	return (node);
-}
-
-static int	is_flag(char *s)
-{
-	if (s[0] == '-' && s[1] == '-')
-		return (1);
-	return (0);
-}
-
-int	main(int argc, char **argv)
-{
-	int		i;
-	char	*node;
-
-	i = 1;
-	while (i < argc)
+	a = stack;
+	mistakes = 0;
+	total_pairs = 0;
+	while (a)
 	{
-		if (is_flag(argv[i]))
+		b = a->next;
+		while (b)
 		{
-			//handle_flag(argv[i]);
-			write(1, "\n", 1);
+			total_pairs++;
+			if (*(int *) a->content > *(int *) b->content)
+				mistakes++;
+			b = b->next;
 		}
-		else
-		{
-			node = ft_lstnew(atoi(argv[i]));
-			expand_stack(&node, atoi(argv[i]));
-		}
-		i++;
+		a = a->next;
 	}
-	return (0);
+	if (total_pairs == 0)
+		return (0);
+	return ((double) mistakes / total_pairs);
 }

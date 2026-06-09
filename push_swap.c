@@ -104,7 +104,7 @@ int	main(int argc, char **argv)
 		}
 		else
 		{
-			append_node(&stack_a, atoi(argv[i]));
+			append_node(&stack_a, ft_atoi(argv[i]));
 		}
 		i++;
 	}

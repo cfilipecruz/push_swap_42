@@ -25,7 +25,7 @@ static void	print_int(int n)
 static int	append_node(t_node **node, int value)
 {
 	t_node	*temp;
-	t_node current;
+	t_node *current;
 
 	current = *node;
 	temp = malloc(sizeof(t_node));

@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:09:51 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/08 16:18:37 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/09 17:48:14 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,65 @@ static void	print_int(int n)
 	write(1, &c, 1);
 }
 
-static t_node	*create_node(t_node *previous_node, int value)
+static int	append_node(t_node **node, int value)
 {
-	t_node	*node;
+	t_node	*temp;
 
-	node = malloc(sizeof(t_node));
-	if (!node)
-		return (NULL);
-	node->value = value;
-	node->next = previous_node;
-	return (node);
+	temp = malloc(sizeof(t_node));
+	if (!temp)
+		return (0);
+	temp->value = value;
+	temp->next = NULL;
+	if (*node == NULL)
+		return (1);
+	(*node)->next = temp;
+	return (1);
 }
-
-
 
 static int	is_flag(char *s)
 {
 	if (s[0] == '-' && s[1] == '-')
 		return (1);
 	return (0);
+}
+
+double	compute_disorder(t_node *stack)
+{
+	t_node	*a;
+	t_node	*b;
+	int		mistakes;
+	int		total_pairs;
+
+	a = stack;
+	mistakes = 0;
+	total_pairs = 0;
+	while (a)
+	{
+		b = a->next;
+		while (b)
+		{
+			total_pairs++;
+			if (a->value > b->value)
+				mistakes++;
+			b = b->next;
+		}
+		a = a->next;
+	}
+	if (total_pairs == 0)
+		return (0);
+	return ((double) mistakes / total_pairs);
+}
+
+void	print_stack(t_node *stack)
+{
+	while (stack)
+	{
+		ft_putnbr_fd(stack->value, 1);
+		ft_putchar_fd('\n', 1);
+		stack = stack->next;
+	}
+	ft_putnbr_fd(stack->value, 1);
+	ft_putchar_fd('\n', 1);
 }
 
 int	main(int argc, char **argv)
@@ -59,9 +99,10 @@ int	main(int argc, char **argv)
 		}
 		else
 		{
-			stack_a = create_node(stack_a, atoi(argv[i]));
+			append_node(&stack_a, atoi(argv[i]));
 		}
 		i++;
 	}
+	print_stack(stack_a);
 	return (0);
 }

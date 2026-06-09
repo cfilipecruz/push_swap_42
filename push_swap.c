@@ -68,6 +68,35 @@ double	compute_disorder(t_node *stack)
 	return ((double) mistakes / total_pairs);
 }
 
+static int	is_number(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	if (s[i] == '\0')
+		return (0);
+	while (s[i])
+	{
+		if (!ft_isdigit(s[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+static int	has_duplicate(t_node *stack, int value)
+{
+	while (stack)
+	{
+		if (stack->value == value)
+			return (1);
+		stack = stack->next;
+	}
+	return (0);
+}
+
 void	print_stack(t_node *stack)
 {
 	while (stack)
@@ -93,10 +122,20 @@ int	main(int argc, char **argv)
 			write(1, "\n", 1);
 		}
 		else
-		{
-			append_node(&stack_a, ft_atoi(argv[i]));
+		{	if(is_number(argv[i])){
+				append_node(&stack_a, ft_atoi(argv[i]));
+			}	
+			else{
+				write(2, "Error\n", 6)
+				return(1);
+			}
 		}
 		i++;
+	}
+	if (has_duplicate(stack_a, value))
+	{
+		write(2, "Error\n", 6);
+		return (1);
 	}
 	print_stack(stack_a);
 	return (0);

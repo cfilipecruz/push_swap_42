@@ -22,7 +22,7 @@ static void	print_int(int n)
 	write(1, &c, 1);
 }
 
-static t_node	*expand_stack(t_node *previous_node, int value)
+static t_node	*create_node(t_node *previous_node, int value)
 {
 	t_node	*node;
 
@@ -34,6 +34,8 @@ static t_node	*expand_stack(t_node *previous_node, int value)
 	return (node);
 }
 
+
+
 static int	is_flag(char *s)
 {
 	if (s[0] == '-' && s[1] == '-')
@@ -44,9 +46,10 @@ static int	is_flag(char *s)
 int	main(int argc, char **argv)
 {
 	int		i;
-	char	*node;
+	t_node *stack_a;
 
 	i = 1;
+	stack_a = NULL;
 	while (i < argc)
 	{
 		if (is_flag(argv[i]))
@@ -56,8 +59,7 @@ int	main(int argc, char **argv)
 		}
 		else
 		{
-			node = ft_lstnew(atoi(argv[i]));
-			expand_stack(&node, atoi(argv[i]));
+			stack_a = create_node(stack_a, atoi(argv[i]));
 		}
 		i++;
 	}

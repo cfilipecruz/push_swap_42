@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/27 16:13:04 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 17:44:42 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/22 16:57:47 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/27 22:49:17 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,26 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len1;
-	size_t	len2;
-	size_t	buffer;
-	char	*result;
+	size_t	i;
+	size_t	size;
+	char	*str;
+	char	*ret;
 
-	if (!s1 || !s2)
+	i = 0;
+	size = 0;
+	while (s1[i++])
+		size++;
+	i = 0;
+	while (s2[i++])
+		size++;
+	str = malloc(sizeof(char) * (size + 1));
+	if (!str)
 		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	buffer = len1 + len2 + 1;
-	result = malloc((buffer) * sizeof(char));
-	if (!result)
-		return (NULL);
-	result[0] = '\0';
-	ft_strlcat(result, s1, buffer);
-	ft_strlcat(result, s2, buffer);
-	return (result);
+	ret = str;
+	while (*s1)
+		*(str++) = *(s1++);
+	while (*s2)
+		*(str++) = *(s2++);
+	*str = '\0';
+	return (ret);
 }

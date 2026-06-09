@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/01 19:36:57 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 18:03:52 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/27 22:08:34 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/27 22:11:10 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!new)
 		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
 	new->next = *lst;
 	*lst = new;
 }

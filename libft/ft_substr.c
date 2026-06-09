@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/25 20:41:33 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/07 18:36:54 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/22 16:45:28 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/29 18:03:33 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*new_string;
 	size_t	i;
-	size_t	lens;
+	char	*ret;
 
-	i = 0;
-	lens = ft_strlen(s);
-	if (start >= lens)
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	if (len > lens - start)
-		len = lens - start;
-	new_string = malloc((len + 1) * sizeof(char));
-	if (!new_string)
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	i = 0;
+	ret = malloc(sizeof(char) * (len + 1));
+	if (!ret)
 		return (NULL);
 	while (i < len)
 	{
-		new_string[i] = s[i + start];
+		ret[i] = s[i + start];
 		i++;
 	}
-	new_string[i] = '\0';
-	return (new_string);
+	ret[i] = '\0';
+	return (ret);
 }

@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 18:16:40 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 17:44:39 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/27 21:25:19 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/27 21:28:28 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int	i;
+	unsigned int		i;
 
 	i = 0;
 	while (s[i])

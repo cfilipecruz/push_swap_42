@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/04 18:33:26 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 17:43:54 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/27 22:29:22 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/27 22:41:46 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst)
+	t_list	*node;
+
+	if (!lst || !f)
+		return ;
+	node = lst;
+	while (node)
 	{
-		f(lst->content);
-		lst = lst->next;
+		f(node->content);
+		node = node->next;
 	}
 }

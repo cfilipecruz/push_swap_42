@@ -3,44 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 21:07:05 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/07 17:40:54 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/21 20:06:35 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/27 20:03:54 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	skip_whitespaces(char *atr)
-{
-	int	counter;
+#include "libft.h"
 
-	counter = 0;
-	while (atr[counter] == ' ' || atr[counter] == '\t' || atr[counter] == '\n'
-		|| atr[counter] == '\v' || atr[counter] == '\f' || atr[counter] == '\r')
-		counter++;
-	return (counter);
+static int	ft_isspace(int c)
+{
+	if (c == ' ' || c == '\f' || c == '\n')
+		return (1);
+	if (c == '\r' || c == '\t' || c == '\v')
+		return (1);
+	return (0);
 }
 
-int	ft_atoi(char *atr)
+int	ft_atoi(const char *nptr)
 {
-	int	counter;
-	int	digit;
+	int	num;
 	int	sign;
+	int	i;
 
+	num = 0;
 	sign = 1;
-	digit = 0;
-	counter = skip_whitespaces(atr);
-	if (atr[counter] == '-')
+	i = 0;
+	while (ft_isspace(nptr[i]))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+		if (nptr[i++] == '-')
+			sign = -1;
+	while (ft_isdigit(nptr[i]))
 	{
-		sign *= -1;
-		counter++;
+		num = (num * 10) + (nptr[i] - '0');
+		i++;
 	}
-	else if (atr[counter] == '+')
-		counter++;
-	while (atr[counter] >= '0' && atr[counter] <= '9')
-	{
-		digit = digit * 10 + (atr[counter] - '0');
-		counter++;
-	}
-	return (digit * sign);
+	return (num * sign);
 }

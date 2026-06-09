@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/04 17:12:30 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 17:43:57 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/27 22:13:38 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/27 22:18:12 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (NULL);
 	while (lst->next)
-	{
 		lst = lst->next;
-	}
 	return (lst);
 }

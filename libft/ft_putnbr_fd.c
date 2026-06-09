@@ -3,31 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 18:40:57 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 17:44:27 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/27 21:32:58 by joavieir          #+#    #+#             */
+/*   Updated: 2026/05/18 17:42:34 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
+	long	num;
+	int		digits;
 
-	if (n == -2147483648)
+	digits = 0;
+	num = n;
+	if (num < 0)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
+		num *= -1;
+		digits++;
 		write(fd, "-", 1);
-		n = -n;
 	}
-	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
-	c = (n % 10) + '0';
-	write(fd, &c, 1);
+	if (num >= 10)
+	{
+		digits += ft_putnbr_fd(num / 10, fd);
+		digits++;
+		ft_putchar_fd((num % 10) + '0', fd);
+	}
+	else
+	{
+		digits++;
+		ft_putchar_fd(num + '0', fd);
+	}
+	return (digits);
 }

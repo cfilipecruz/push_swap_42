@@ -3,50 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/27 18:50:12 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 17:45:06 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/22 17:17:46 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/29 18:01:01 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	checkchar(char c, const char *set)
+static int	ft_contains(char c, char const *set)
 {
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
+	while (*set)
+		if (c == *(set++))
 			return (1);
-		i++;
-	}
 	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		start;
-	int		end;
-	int		i;
-	char	*res;
+	size_t	i;
+	size_t	start;
+	size_t	end;
+	char	*ret;
 
 	if (!s1 || !set)
 		return (NULL);
-	start = 0;
-	while (s1[start] && checkchar(s1[start], set))
-		start++;
-	end = ft_strlen((char *)s1);
-	while (end > start && checkchar(s1[end - 1], set))
-		end--;
-	res = malloc(end - start + 1);
-	if (!res)
-		return (NULL);
 	i = 0;
+	start = 0;
+	while (s1[start] && ft_contains(s1[start], set))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_contains(s1[end - 1], set))
+		end--;
+	ret = malloc(sizeof(char) * (end - start + 1));
+	if (!ret)
+		return (NULL);
 	while (start < end)
-		res[i++] = s1[start++];
-	res[i] = '\0';
-	return (res);
+		ret[i++] = s1[start++];
+	ret[i] = '\0';
+	return (ret);
 }

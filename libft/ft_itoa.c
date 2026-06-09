@@ -3,68 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/01 13:21:47 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 18:22:01 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/27 18:00:23 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/27 20:29:15 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_numbers(long int n)
+static int	ft_numlen(int n)
 {
-	int	i;
+	int		ret;
+	long	num;
 
-	i = 0;
-	if (n == 0)
+	ret = 0;
+	num = n;
+	if (num < 0)
+	{
+		num *= -1;
+		ret++;
+	}
+	if (num == 0)
 		return (1);
-	while (n > 0)
+	while (num > 0)
 	{
-		n = n / 10;
-		i++;
+		num /= 10;
+		ret++;
 	}
-	return (i);
-}
-
-static char	*write_string(long int n, int len, int s)
-{
-	char	*new_string;
-	int		i;
-
-	i = len;
-	new_string = malloc((len + 1) * sizeof(char));
-	if (!new_string)
-		return (NULL);
-	new_string[len] = '\0';
-	if (s == 1)
-		new_string[0] = '-';
-	while (i > s)
-	{
-		i--;
-		new_string[i] = (n % 10) + '0';
-		n = n / 10;
-	}
-	return (new_string);
+	return (ret);
 }
 
 char	*ft_itoa(int n)
 {
-	char		*new_string;
-	int			s;
-	int			len;
-	long int	np;
+	char	*str;
+	long	num;
+	int		len;
 
-	s = 0;
-	np = n;
-	if (n < 0)
-	{
-		s = 1;
-		np = -np;
-	}
-	len = count_numbers(np) + s;
-	new_string = write_string(np, len, s);
-	if (!new_string)
+	len = ft_numlen(n);
+	str = malloc(sizeof(char) * (len + 1));
+	num = n;
+	if (!str)
 		return (NULL);
-	return (new_string);
+	str[len] = '\0';
+	len--;
+	if (num < 0)
+		num *= -1;
+	while (len >= 0)
+	{
+		str[len--] = (num % 10) + '0';
+		num /= 10;
+	}
+	if (n < 0)
+		str[0] = '-';
+	return (str);
 }

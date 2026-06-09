@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 21:10:57 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 17:45:01 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/21 20:01:02 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/21 20:06:29 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (little[i] == '\0')
-	{
-		return ((char *)big);
-	}
-	while (big[i] != '\0' && i < len)
+	if (little[0] == '\0')
+		return ((char *) big);
+	while (i < len && big[i])
 	{
 		j = 0;
-		while (big[i + j] == little[j] && little[j] != '\0' && i + j < len)
-		{
+		while (i + j < len && big[i + j] == little[j] && little[j])
 			j++;
-		}
 		if (little[j] == '\0')
-		{
-			return ((char *)&big[i]);
-		}
+			return ((char *) &big[i]);
 		i++;
 	}
-	return (NULL);
+	return ((char *) NULL);
 }

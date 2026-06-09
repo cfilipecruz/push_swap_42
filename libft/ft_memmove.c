@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 20:52:42 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 17:44:14 by cmarques         ###   ########.fr       */
+/*   Created: 2026/04/20 14:26:02 by joavieir          #+#    #+#             */
+/*   Updated: 2026/04/21 19:15:00 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,24 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	unsigned char		*dp;
+	const unsigned char	*sp;
+	unsigned int		i;
 
-	if (!dest && !src)
-		return (NULL);
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
-	if (d < s)
+	if (n == 0 || (dest == src))
+		return (dest);
+	i = 0;
+	dp = (unsigned char *) dest;
+	sp = (const unsigned char *) src;
+	while (dp > sp && n > 0)
 	{
-		while (n--)
-			*d++ = *s++;
+		n--;
+		*(dp + n) = *(sp + n);
 	}
-	else
+	while (dp < sp && i < n)
 	{
-		i = n;
-		while (i > 0)
-		{
-			i--;
-			d[i] = s[i];
-		}
+		*(dp + i) = *(sp + i);
+		i++;
 	}
-	return (dest);
+	return (dp);
 }

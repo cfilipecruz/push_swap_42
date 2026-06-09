@@ -45,3 +45,33 @@ double	compute_disorder(t_list *stack)
 		return (0);
 	return ((double) mistakes / total_pairs);
 }
+
+int	*parse_args(int argc, char **argv, int *size)
+{
+	int	*ret;
+	char	**nums;
+
+	if (argc == 3)
+		nums = ft_split(argv[2], ' ');
+	else
+		nums = argv;
+	
+	// TODO Add proper validation
+	// TODO Finish function
+
+}
+
+int	main(int argc, char **argv)
+{
+	int	size;
+	int	*nums;
+
+	if (argc < 2)
+		return (1);
+
+	nums = parse_args(argc, argv, &size);
+
+	// TODO A lot...
+
+	return (0);
+}

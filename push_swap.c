@@ -12,16 +12,6 @@
 
 #include "push_swap.h"
 
-static void	print_int(int n)
-{
-	char	c;
-
-	if (n >= 10)
-		print_int(n / 10);
-	c = (n % 10) + '0';
-	write(1, &c, 1);
-}
-
 static int	append_node(t_node **node, int value)
 {
 	t_node	*temp;

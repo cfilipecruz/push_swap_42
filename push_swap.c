@@ -31,8 +31,10 @@ static int	append_node(t_node **node, int value)
 		return (0);
 	temp->value = value;
 	temp->next = NULL;
-	if (*node == NULL)
+	if (*node == NULL){
+		*node = temp;
 		return (1);
+	}
 	(*node)->next = temp;
 	return (1);
 }
@@ -79,8 +81,6 @@ void	print_stack(t_node *stack)
 		ft_putchar_fd('\n', 1);
 		stack = stack->next;
 	}
-	ft_putnbr_fd(stack->value, 1);
-	ft_putchar_fd('\n', 1);
 }
 
 int	main(int argc, char **argv)

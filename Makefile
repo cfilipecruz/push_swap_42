@@ -1,9 +1,30 @@
+NAME = push_swap
 
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
-LIBFT = libft/libft.a
+SRCS = push_swap.c
+OBJS = $(SRCS:.c=.o)
+
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
+
+all: $(NAME)
 
 $(LIBFT):
-	make -C libft
+	$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(LIBFT)
-	cc $(SRCS) $(LIBFT) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+clean:
+	rm -f $(OBJS)
+	$(MAKE) -C $(LIBFT_DIR) clean
+
+fclean: clean
+	rm -f $(NAME)
+	$(MAKE) -C $(LIBFT_DIR) fclean
+
+re: fclean all
+
+.PHONY: all clean fclean re

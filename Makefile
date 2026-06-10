@@ -2,7 +2,13 @@ NAME = push_swap
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = push_swap.c
+INCLUDES = -I.
+SRCS = src/push_swap.c \
+	src/args_handle.c \
+	src/memory.c \
+	src/metrics.c \
+	src/temp_functions.c \
+	src/stack_utils.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT_DIR = libft
@@ -15,6 +21,9 @@ $(LIBFT):
 
 $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+%.o: %.c push_swap.h
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)

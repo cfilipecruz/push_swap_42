@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:09:51 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/09 21:06:25 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/10 01:09:09 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	while (i < argc)
 	{
-		*argument = argv[i];
+		argument = argv[i];
 		if (is_flag(argument))
 		{
 			//handle_flag(argv[i]);
@@ -125,6 +125,11 @@ int	main(int argc, char **argv)
 		}
 		else
 		{	if(is_number(argument)){
+				if (has_duplicate(stack_a, ft_atoi(argument)))
+				{
+					write(2, "Error\n", 6);
+					return (1);
+				}	
 				append_node(&stack_a, ft_atoi(argument));
 			}	
 			else{
@@ -132,11 +137,7 @@ int	main(int argc, char **argv)
 				return(1);
 			}
 		}
-		if (has_duplicate(stack_a, ft_atoi(argument)))
-		{
-			write(2, "Error\n", 6);
-			return (1);
-		}	
+	
 		i++;
 	}
 

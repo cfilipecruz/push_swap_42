@@ -10,7 +10,9 @@ SRCS = src/push_swap.c \
 	src/metrics.c \
 	src/temp_functions.c \
 	src/stack_utils.c \
-	src/op_s.c
+	src/op_s.c \
+	src/op_p.c \
+
 
 OBJS = $(SRCS:.c=.o)
 

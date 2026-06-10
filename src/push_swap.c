@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:09:51 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/10 18:49:52 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/10 21:39:06 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ int	main(int argc, char **argv)
 	int		i;
 	int		value;
 	t_node	*stack_a;
+	t_node	*stack_b;
 	char	*argument;
 
 	i = 1;
 	stack_a = NULL;
+	stack_b = NULL;
 	while (i < argc)
 	{
 		argument = argv[i];
@@ -50,10 +52,12 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	}
-	print_stack(stack_a);
-	write(1, "\n", 1);
+	print_stacks("original", stack_a, stack_b);
 	sa(stack_a);
-	print_stack(stack_a);
+	print_stacks("after sa", stack_a, stack_b);
+	pb(&stack_a, &stack_b);
+	print_stacks("after pb", stack_a, stack_b);
 	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }

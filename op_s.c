@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_s.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:10 by joavieir          #+#    #+#             */
-/*   Updated: 2026/06/09 17:03:52 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/06/10 17:58:26 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,3 @@ void	sa(t_node *stack)
 	last = node_last(stack);
 
 }
-
-void	sb(t_node *stack)

@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:09:51 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/10 01:09:09 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/10 17:57:07 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,6 @@ static int	append_node(t_node **node, int value)
 	return (1);
 }
 
-static int	is_flag(char *s)
-{
-	if (s[0] == '-' && s[1] == '-')
-		return (1);
-	return (0);
-}
-
 double	compute_disorder(t_node *stack)
 {
 	t_node	*a;
@@ -66,35 +59,6 @@ double	compute_disorder(t_node *stack)
 	if (total_pairs == 0)
 		return (0);
 	return ((double) mistakes / total_pairs);
-}
-
-static int	is_number(char *s)
-{
-	int	i;
-
-	i = 0;
-	if (s[i] == '-' || s[i] == '+')
-		i++;
-	if (s[i] == '\0')
-		return (0);
-	while (s[i])
-	{
-		if (!ft_isdigit(s[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-static int	has_duplicate(t_node *stack, int value)
-{
-	while (stack)
-	{
-		if (stack->value == value)
-			return (1);
-		stack = stack->next;
-	}
-	return (0);
 }
 
 void	print_stack(t_node *stack)

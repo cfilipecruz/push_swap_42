@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:10 by joavieir          #+#    #+#             */
-/*   Updated: 2026/06/10 18:52:35 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/10 19:24:21 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,18 @@ static void	stack_swap(t_node *stack)
 	stack->next->value = temp;
 }
 
-void			sa(t_node *stack)
+void	sa(t_node *stack_a)
 {
-	stack_swap(stack);
+	stack_swap(stack_a);
 }
 
-void			sb(t_node *stack)
+void	sb(t_node *stack_b)
 {
-	stack_swap(stack);
+	stack_swap(stack_b);
 }
 
+void	ss(t_node *stack_a, t_node *stack_b)
+{
+	stack_swap(stack_a);
+	stack_swap(stack_b);
+}

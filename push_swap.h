@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/10 18:05:28 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/10 20:42:36 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,20 @@ int					is_valid_number(char *s);
 int					has_duplicate(t_node *stack, int value);
 int					append_node(t_node **node, int value);
 
-void				sa(t_node *stack);
-void				sb(t_node *stack);
-void				ss(t_node *a, t_node *b);
+void				sa(t_node *stack_a);
+void				sb(t_node *stack_b);
+void				ss(t_node *stack_a, t_node *stack_b);
 
-void				pa(t_node *a, t_node *b);
-void				pb(t_node *a, t_node *b);
+void				pa(t_node *stack_a, t_node *stack_b);
+void				pb(t_node *stack_a, t_node *stack_b);
 
-void				ra(t_node *stack);
-void				rb(t_node *stack);
+void				ra(t_node *stack_a);
+void				rb(t_node *stack_b);
 
-void				rr(t_node *a, t_node *b);
-void				rra(t_node *stack);
-void				rrb(t_node *stack);
-void				rrr(t_node *a, t_node *b);
+void				rr(t_node *stack_a, t_node *stack_b);
+void				rra(t_node *stack_a);
+void				rrb(t_node *stack_b);
+void				rrr(t_node *stack_a, t_node *stack_b);
 
 void				print_stack(t_node *stack);
 void				free_stack(t_node *stack);

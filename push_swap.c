@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:09:51 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/09 17:48:14 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/06/09 21:06:25 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,32 +111,35 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	t_node *stack_a;
+	char *argument;
 
 	i = 1;
 	stack_a = NULL;
 	while (i < argc)
 	{
-		if (is_flag(argv[i]))
+		*argument = argv[i];
+		if (is_flag(argument))
 		{
 			//handle_flag(argv[i]);
 			write(1, "\n", 1);
 		}
 		else
-		{	if(is_number(argv[i])){
-				append_node(&stack_a, ft_atoi(argv[i]));
+		{	if(is_number(argument)){
+				append_node(&stack_a, ft_atoi(argument));
 			}	
 			else{
-				write(2, "Error\n", 6)
+				write(2, "Error\n", 6);
 				return(1);
 			}
 		}
+		if (has_duplicate(stack_a, ft_atoi(argument)))
+		{
+			write(2, "Error\n", 6);
+			return (1);
+		}	
 		i++;
 	}
-	if (has_duplicate(stack_a, value))
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
+
 	print_stack(stack_a);
 	return (0);
 }

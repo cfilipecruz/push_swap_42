@@ -3,12 +3,15 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I.
+
 SRCS = src/push_swap.c \
 	src/args_handle.c \
 	src/memory.c \
 	src/metrics.c \
 	src/temp_functions.c \
-	src/stack_utils.c
+	src/stack_utils.c \
+	src/op_s.c
+
 OBJS = $(SRCS:.c=.o)
 
 LIBFT_DIR = libft

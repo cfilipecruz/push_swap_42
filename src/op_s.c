@@ -6,23 +6,30 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:10 by joavieir          #+#    #+#             */
-/*   Updated: 2026/06/10 17:58:26 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/10 18:52:35 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*node_last(t_node *node)
+static void	stack_swap(t_node *stack)
 {
+	int	temp;
 
+	if (!stack || !stack->next)
+		return ;
+	temp = stack->value;
+	stack->value = stack->next->value;
+	stack->next->value = temp;
 }
 
-void	sa(t_node *stack)
+void			sa(t_node *stack)
 {
-	t_node	*last;
-	t_node	*second_last;
-	t_node	*temp;
-
-	last = node_last(stack);
-
+	stack_swap(stack);
 }
+
+void			sb(t_node *stack)
+{
+	stack_swap(stack);
+}
+

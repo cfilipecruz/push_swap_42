@@ -6,7 +6,7 @@ INCLUDES = -I.
 
 SRCS = src/push_swap.c \
 	src/args_handle.c \
-	src/memory.c \
+	src/utils.c \
 	src/metrics.c \
 	src/temp_functions.c \
 	src/stack_utils.c \

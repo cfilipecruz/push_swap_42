@@ -21,13 +21,16 @@ OBJS = $(SRCS:.c=.o)
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-all: $(NAME)
+all: $(NAME) clean_objs
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
 $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+clean_objs:
+	rm -f $(OBJS) src/*.o
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
@@ -42,4 +45,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean_objs clean fclean re

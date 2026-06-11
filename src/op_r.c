@@ -6,18 +6,18 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 22:03:31 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/10 23:58:17 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/11 00:14:02 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_node **stack)
+static void	rotate_down(t_node **stack)
 {
 	t_node	*current;
 	t_node	*temp;
 
-	if (!stack || !*stack)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	current = *stack;
 	temp = *stack;
@@ -32,11 +32,11 @@ static void	rotate(t_node **stack)
 
 void	ra(t_node **stack_a)
 {
-	rotate(stack_a);
+	rotate_down(stack_a);
 }
 void	rb(t_node **stack_b)
 {
-	rotate(stack_b);
+	rotate_down(stack_b);
 }
 void	rr(t_node **stack_a, t_node **stack_b)
 {

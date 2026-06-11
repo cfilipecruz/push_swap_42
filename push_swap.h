@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/10 23:54:13 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/11 00:03:11 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void				ra(t_node **stack_a);
 void				rb(t_node **stack_b);
 void				rr(t_node **stack_a, t_node **stack_b);
 
-void				rra(t_node *stack_a);
-void				rrb(t_node *stack_b);
-void				rrr(t_node *stack_a, t_node *stack_b);
+void				rra(t_node **stack_a);
+void				rrb(t_node **stack_b);
+void				rrr(t_node **stack_a, t_node **stack_b);
 
 
 //Temp functions

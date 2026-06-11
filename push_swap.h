@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/10 21:27:50 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/10 23:54:13 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,16 @@ void				ss(t_node *stack_a, t_node *stack_b);
 void				pa(t_node **stack_a, t_node **stack_b);
 void				pb(t_node **stack_a, t_node **stack_b);
 
-void				ra(t_node *stack_a);
-void				rb(t_node *stack_b);
-void				rr(t_node *stack_a, t_node *stack_b);
+void				ra(t_node **stack_a);
+void				rb(t_node **stack_b);
+void				rr(t_node **stack_a, t_node **stack_b);
 
 void				rra(t_node *stack_a);
 void				rrb(t_node *stack_b);
 void				rrr(t_node *stack_a, t_node *stack_b);
 
+
+//Temp functions
 void				print_stack(t_node *stack);
-void				print_stacks(char *label, t_node *stack_a, t_node *stack_b);
 void				free_stack(t_node *stack);
 #endif

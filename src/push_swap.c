@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:09:51 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/10 21:39:06 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/11 00:01:16 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,13 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	}
-	print_stacks("original", stack_a, stack_b);
-	sa(stack_a);
-	print_stacks("after sa", stack_a, stack_b);
-	pb(&stack_a, &stack_b);
-	print_stacks("after pb", stack_a, stack_b);
-	free_stack(stack_a);
-	free_stack(stack_b);
+	write(2, "Before\n", 7);
+	print_stack(stack_a);
+	ra(&stack_a);
+	ra(&stack_a);
+	write(2, "After\n", 6);
+	print_stack(stack_a);
+	free(stack_a);
+	free(stack_b);
 	return (0);
 }

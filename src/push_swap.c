@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:09:51 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/11 00:01:16 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/11 22:47:00 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,12 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	}
-	write(2, "Before\n", 7);
-	print_stack(stack_a);
-	ra(&stack_a);
-	ra(&stack_a);
-	write(2, "After\n", 6);
-	print_stack(stack_a);
-	free(stack_a);
-	free(stack_b);
+	stack_size(stack_a);
+	if(is_sorted(stack_a)){
+		free_stack(stack_a);
+		return(0);
+	}
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }

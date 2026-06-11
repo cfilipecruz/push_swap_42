@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/11 00:21:48 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/11 22:25:50 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int					is_flag(char *s);
 int					is_valid_number(char *s);
 int					has_duplicate(t_node *stack, int value);
 int					append_node(t_node **node, int value);
+int	stack_size(t_node *stack);
+int is_sorted(t_node *stack);
 
 void				sa(t_node *stack_a);
 void				sb(t_node *stack_b);

@@ -1,0 +1,63 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils_2.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/12 23:31:20 by cmarques          #+#    #+#             */
+/*   Updated: 2026/06/12 23:40:52 by cmarques         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+static int	handle_number(char *argument, t_node **stack_a)
+{
+	int	value;
+
+	if (!is_valid_number(argument))
+		return (0);
+	value = ft_atoi(argument);
+	if (has_duplicate(*stack_a, value))
+		return (0);
+	if (!append_node(stack_a, value))
+		return (0);
+	return (1);
+}
+static int	is_valid_flag(char *argument)
+{
+	if (ft_strncmp(argument, "--simple", 9) == 0)
+		return (1);
+	if (ft_strncmp(argument, "--medium", 9) == 0)
+		return (1);
+	if (ft_strncmp(argument, "--complex", 10) == 0)
+		return (1);
+	if (ft_strncmp(argument, "--adaptive", 11) == 0)
+		return (1);
+	if (ft_strncmp(argument, "--bench", 8) == 0)
+		return (1);
+	return (0);
+}
+
+int	init_stack(int argc, char **argv, t_node **stack_a)
+{
+	int i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (is_flag(argv[i]))
+		{
+			if (!is_valid_flag(argv[i]))
+				return (0);
+		}
+		else
+		{
+			if (!handle_number(argv[i], stack_a))
+				return (0);
+		}
+		i++;
+	}
+	return (1);
+}

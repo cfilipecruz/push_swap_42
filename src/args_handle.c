@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 17:55:57 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/10 17:58:15 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/12 23:26:55 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,4 @@ int	is_valid_number(char *s)
 	return (1);
 }
 
-int	has_duplicate(t_node *stack, int value)
-{
-	while (stack)
-	{
-		if (stack->value == value)
-			return (1);
-		stack = stack->next;
-	}
-	return (0);
-}
+

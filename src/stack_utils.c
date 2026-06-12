@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:30:00 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/11 22:38:36 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/12 23:27:05 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ int	append_node(t_node **node, int value)
 		*node = temp;
 		return (1);
 	}
-	while (current->next)
-		current = current->next;
+	current = last_node(*node);
 	current->next = temp;
 	return (1);
 }
@@ -58,4 +57,24 @@ int	is_sorted(t_node *stack)
 		stack = stack->next;
 	}
 	return (1);
+}
+
+t_node	*last_node(t_node *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
+}
+
+int	has_duplicate(t_node *stack, int value)
+{
+	while (stack)
+	{
+		if (stack->value == value)
+			return (1);
+		stack = stack->next;
+	}
+	return (0);
 }

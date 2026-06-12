@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/11 23:29:11 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/12 23:43:09 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,15 @@ int					has_duplicate(t_node *stack, int value);
 int					append_node(t_node **node, int value);
 int					stack_size(t_node *stack);
 int					is_sorted(t_node *stack);
+t_node				*last_node(t_node *stack);
+int					init_stack(int argc, char **argv, t_node **stack_a);
 
 int					error_exit(t_node *stack_a, t_node *stack_b);
+void				print_error(void);
+int					clean_exit(t_node *stack_a, t_node *stack_b);
 void				free_stack(t_node *stack);
+int					min_value(t_node *stack);
+int					max_value(t_node *stack);
 
 void				sa(t_node *stack_a);
 void				sb(t_node *stack_b);

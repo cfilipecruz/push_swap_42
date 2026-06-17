@@ -10,11 +10,15 @@ SRCS = src/push_swap.c \
 	src/metrics.c \
 	src/temp_functions.c \
 	src/stack_utils.c \
-	src/stack_utils_2.c \
 	src/op_s.c \
 	src/op_p.c \
 	src/op_r.c \
 	src/op_rr.c \
+	src/initialization.c \
+	src/algo_simple.c \
+	src/algo_medium.c \
+	src/algo_complex.c \
+	src/algo_adaptive.c
 
 
 OBJS = $(SRCS:.c=.o)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils_2.c                                    :+:      :+:    :+:   */
+/*   initialization.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/12 23:31:20 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/17 17:58:21 by joavieir         ###   ########.fr       */
+/*   Created: 2026/06/17 18:01:57 by joavieir          #+#    #+#             */
+/*   Updated: 2026/06/17 18:03:29 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	run_algo(int flag, t_node **stack_a, t_node **stack_b, double disorde
 	else if (flag == STRATEGY_COMPLEX)
 		return (algo_complex(stack_a, stack_b));
 	else
-		return (choose_algo(stack_a, stack_b, disorder));
+		return (algo_adaptive(stack_a, stack_b, disorder));
 }
 
 int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b, double disorder)

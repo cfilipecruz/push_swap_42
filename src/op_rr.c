@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 00:02:23 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/12 23:17:58 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/17 15:21:08 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,28 @@ static int	rotate_stack_reverse(t_node **stack)
 	*stack = current;
 	return (1);
 }
-void	rra(t_node **stack_a)
+
+int	rra(t_node **stack_a)
 {
-	if (rotate_stack_reverse(stack_a))
+	int	ret;
+
+	ret = rotate_stack_reverse(stack_a);
+	if (ret)
 		write(1, "rra\n", 4);
+	return (ret);
 }
-void	rrb(t_node **stack_b)
+
+int	rrb(t_node **stack_b)
 {
-	if (rotate_stack_reverse(stack_b))
+	int ret;
+
+	ret = rotate_stack_reverse(stack_b);
+	if (ret)
 		write(1, "rrb\n", 4);
+	return (ret);
 }
-void	rrr(t_node **stack_a, t_node **stack_b)
+
+int	rrr(t_node **stack_a, t_node **stack_b)
 {
 	int	rotated_a;
 	int	rotated_b;
@@ -49,4 +60,5 @@ void	rrr(t_node **stack_a, t_node **stack_b)
 	rotated_b = rotate_stack_reverse(stack_b);
 	if (rotated_a || rotated_b)
 		write(1, "rrr\n", 4);
+	return (rotated_a || rotated_b);
 }

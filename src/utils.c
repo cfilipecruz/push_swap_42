@@ -6,23 +6,23 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 17:59:41 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/12 23:05:30 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/17 15:53:33 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	error_exit(t_node *stack_a, t_node *stack_b)
-{
-	write(2, "Error\n", 6);
-	free_stack(stack_a);
-	free_stack(stack_b);
-	return (1);
-}
-
 void	print_error(void)
 {
 	write(2, "Error\n", 6);
+}
+
+int	error_exit(t_node *stack_a, t_node *stack_b)
+{
+	print_error();
+	free_stack(stack_a);
+	free_stack(stack_b);
+	return (1);
 }
 
 int	clean_exit(t_node *stack_a, t_node *stack_b)

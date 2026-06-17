@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 20:50:26 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/11 00:24:24 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/17 15:17:25 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,22 @@ static int	push_node(t_node **stack_1, t_node **stack_2)
 	return (1);
 }
 
-void	pa(t_node **stack_a, t_node **stack_b)
+int	pa(t_node **stack_a, t_node **stack_b)
 {
-	if (push_node(stack_b, stack_a))
+	int	ret;
+
+	ret = push_node(stack_b, stack_a);
+	if (ret)
 		write(1, "pa\n", 3);
+	return (ret);
 }
 
-void	pb(t_node **stack_a, t_node **stack_b)
+int	pb(t_node **stack_a, t_node **stack_b)
 {
-	if (push_node(stack_a, stack_b))
+	int	ret;
+
+	ret = push_node(stack_a, stack_b);
+	if (ret)
 		write(1, "pb\n", 3);
+	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:10 by joavieir          #+#    #+#             */
-/*   Updated: 2026/06/13 10:51:23 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/17 15:15:13 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	stack_swap(t_node *stack)
 	return (1);
 }
 
-void	sa(t_node *stack_a)
+int	sa(t_node *stack_a)
 {
 	if (stack_swap(stack_a))
 	{
@@ -34,7 +34,7 @@ void	sa(t_node *stack_a)
 	return (0);
 }
 
-void	sb(t_node *stack_b)
+int	sb(t_node *stack_b)
 {
 	if (stack_swap(stack_b)){
 		write(1, "sb\n", 3);
@@ -43,7 +43,7 @@ void	sb(t_node *stack_b)
 	return(0);
 }
 
-void	ss(t_node *stack_a, t_node *stack_b)
+int	ss(t_node *stack_a, t_node *stack_b)
 {
 	int	swapped_a;
 	int	swapped_b;

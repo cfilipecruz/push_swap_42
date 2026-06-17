@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 17:59:41 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/10 23:51:12 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/17 15:49:00 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,4 @@ void	print_stack(t_node *stack)
 		stack = stack->next;
 	}
 }
+

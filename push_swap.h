@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/12 23:43:09 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/17 17:08:14 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,17 @@ typedef struct s_node
 
 typedef enum e_strategy
 {
-	STRATEGY_ADAPTIVE,
 	STRATEGY_SIMPLE,
 	STRATEGY_MEDIUM,
-	STRATEGY_COMPLEX
+	STRATEGY_COMPLEX,
+	STRATEGY_ADAPTIVE,
 }					t_strategy;
+
+typedef enum e_mode
+{
+	MODE_INVALID,
+	MODE_BENCH
+}					t_mode;
 
 double				compute_disorder(t_node *stack);
 
@@ -39,30 +45,30 @@ int					has_duplicate(t_node *stack, int value);
 int					append_node(t_node **node, int value);
 int					stack_size(t_node *stack);
 int					is_sorted(t_node *stack);
-t_node				*last_node(t_node *stack);
 int					init_stack(int argc, char **argv, t_node **stack_a);
+t_node				*last_node(t_node *stack);
 
 int					error_exit(t_node *stack_a, t_node *stack_b);
-void				print_error(void);
 int					clean_exit(t_node *stack_a, t_node *stack_b);
-void				free_stack(t_node *stack);
 int					min_value(t_node *stack);
 int					max_value(t_node *stack);
+void				print_error(void);
+void				free_stack(t_node *stack);
 
-void				sa(t_node *stack_a);
-void				sb(t_node *stack_b);
-void				ss(t_node *stack_a, t_node *stack_b);
+int				sa(t_node *stack_a);
+int				sb(t_node *stack_b);
+int				ss(t_node *stack_a, t_node *stack_b);
 
-void				pa(t_node **stack_a, t_node **stack_b);
-void				pb(t_node **stack_a, t_node **stack_b);
+int				pa(t_node **stack_a, t_node **stack_b);
+int				pb(t_node **stack_a, t_node **stack_b);
 
-void				ra(t_node **stack_a);
-void				rb(t_node **stack_b);
-void				rr(t_node **stack_a, t_node **stack_b);
+int				ra(t_node **stack_a);
+int				rb(t_node **stack_b);
+int				rr(t_node **stack_a, t_node **stack_b);
 
-void				rra(t_node **stack_a);
-void				rrb(t_node **stack_b);
-void				rrr(t_node **stack_a, t_node **stack_b);
+int				rra(t_node **stack_a);
+int				rrb(t_node **stack_b);
+int				rrr(t_node **stack_a, t_node **stack_b);
 
 // Temp functions
 void				print_stack(t_node *stack);

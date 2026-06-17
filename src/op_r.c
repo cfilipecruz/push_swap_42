@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_r.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 22:03:31 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/12 23:18:13 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/17 16:03:01 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,27 @@ static int	rotate_stack(t_node **stack)
 	return (1);
 }
 
-void	ra(t_node **stack_a)
+int	ra(t_node **stack_a)
 {
-	if (rotate_stack(stack_a))
+	int	ret;
+
+	ret = rotate_stack(stack_a);
+	if (ret)
 		write(1, "ra\n", 3);
+	return (ret);
 }
-void	rb(t_node **stack_b)
+
+int	rb(t_node **stack_b)
 {
-	if (rotate_stack(stack_b))
+	int	ret;
+
+	ret = rotate_stack(stack_b);
+	if (ret)
 		write(1, "rb\n", 3);
+	return (ret);
 }
-void	rr(t_node **stack_a, t_node **stack_b)
+
+int	rr(t_node **stack_a, t_node **stack_b)
 {
 	int	rotated_a;
 	int	rotated_b;
@@ -47,4 +57,5 @@ void	rr(t_node **stack_a, t_node **stack_b)
 	rotated_b = rotate_stack(stack_b);
 	if (rotated_a || rotated_b)
 		write(1, "rr\n", 3);
+	return (rotated_a || rotated_b);
 }

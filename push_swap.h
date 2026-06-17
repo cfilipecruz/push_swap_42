@@ -6,7 +6,7 @@
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/17 17:08:14 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/06/17 17:56:55 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int					has_duplicate(t_node *stack, int value);
 int					append_node(t_node **node, int value);
 int					stack_size(t_node *stack);
 int					is_sorted(t_node *stack);
-int					init_stack(int argc, char **argv, t_node **stack_a);
+int					init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b, double disorder);
 t_node				*last_node(t_node *stack);
 
 int					error_exit(t_node *stack_a, t_node *stack_b);
@@ -69,6 +69,11 @@ int				rr(t_node **stack_a, t_node **stack_b);
 int				rra(t_node **stack_a);
 int				rrb(t_node **stack_b);
 int				rrr(t_node **stack_a, t_node **stack_b);
+
+int				algo_simple(t_node **stack_a, t_node **stack_b);
+int				algo_medium(t_node **stack_a, t_node **stack_b);
+int				algo_complex(t_node **stack_a, t_node **stack_b);
+int				algo_adaptive(t_node **stack_a, t_node **stack_b, double disorder);
 
 // Temp functions
 void				print_stack(t_node *stack);

@@ -6,21 +6,11 @@
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/12 23:31:20 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/17 16:58:50 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/06/17 17:58:21 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*
-static int	handle_flag(int flag_number)
-{
-	if (flag_number == 5)
-	{
-		call_bench();
-	}
-}
-*/
 
 static int	handle_number(char *argument, t_node **stack_a)
 {
@@ -35,6 +25,7 @@ static int	handle_number(char *argument, t_node **stack_a)
 		return (0);
 	return (1);
 }
+
 static int	is_valid_flag(char *argument)
 {
 	if (ft_strncmp(argument, "--simple", 9) == 0)
@@ -50,7 +41,19 @@ static int	is_valid_flag(char *argument)
 	return (0);
 }
 
-int	init_stack(int argc, char **argv, t_node **stack_a)
+static int	run_algo(int flag, t_node **stack_a, t_node **stack_b, double disorder)
+{
+	if (flag == STRATEGY_SIMPLE)
+		return (algo_simple(stack_a, stack_b));
+	else if (flag == STRATEGY_MEDIUM)
+		return (algo_medium(stack_a, stack_b));
+	else if (flag == STRATEGY_COMPLEX)
+		return (algo_complex(stack_a, stack_b));
+	else
+		return (choose_algo(stack_a, stack_b, disorder));
+}
+
+int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b, double disorder)
 {
 	int	i;
 	int	bench;
@@ -63,29 +66,13 @@ int	init_stack(int argc, char **argv, t_node **stack_a)
 		if (is_flag(argv[i]))
 		{
 			flag = is_valid_flag(argv[i]);
-			if (!flag)
-				return (0);
 			if (flag == MODE_BENCH)
 				bench = MODE_BENCH;
 		}
 		else
-		{
 			if (!handle_number(argv[i], stack_a))
 				return (0);
-		}
 		i++;
 	}
-
-	if (flag == STRATEGY_SIMPLE)
-		algo_simple();
-	else if (flag == STRATEGY_MEDIUM)
-		algo_medium();
-	else if (flag == STRATEGY_COMPLEX)
-		algo_complex();
-	else
-		choose_algo();
-
-	(void) bench;
-
-	return (1);
+	return (run_algo(flag, stack_a, stack_b, disorder));
 }

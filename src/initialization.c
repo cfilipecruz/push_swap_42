@@ -6,7 +6,7 @@
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:01:57 by joavieir          #+#    #+#             */
-/*   Updated: 2026/06/17 18:03:29 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/01 17:01:40 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b, double
 
 	i = 1;
 	bench = 0;
+	(void) bench;
 	while (i < argc)
 	{
 		if (is_flag(argv[i]))

@@ -16,6 +16,8 @@ SRCS = src/push_swap.c \
 	src/op_rr.c \
 	src/initialization.c \
 	src/algo_simple.c \
+	src/algo_simple_exec.c \
+	src/algo_simple_helpers.c \
 	src/algo_medium.c \
 	src/algo_complex.c \
 	src/algo_adaptive.c

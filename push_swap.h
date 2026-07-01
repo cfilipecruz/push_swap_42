@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/01 17:29:34 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/01 23:18:45 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,25 +74,25 @@ int					rrb(t_node **stack_b);
 int					rrr(t_node **stack_a, t_node **stack_b);
 
 // Simple Algorithm (Turk Algorithm)
-int				algo_simple(t_node **stack_a, t_node **stack_b);
-int				get_best_path(int *info, int *path);
-int				get_min_pos(t_node *a);
-int				get_max_pos(t_node *b);
-int				get_target_a_pos(int val, t_node *a);
-int				get_target_b_pos(int val, t_node *b);
-int				get_cheapest_a_pos(t_node *a, t_node *b);
-int				max(int a, int b);
-void		exec_up(t_node **a, t_node **b, int p_a, int p_b);
-void		exec_down(t_node **a, t_node **b, int p_a, int p_b);
-void		execute_moves(t_node **a, t_node **b, int p_a, int p_b);
-void		push_cheapest_to_b(t_node **a, t_node **b);
-void		pull_back_to_a(t_node **a, t_node **b);
-void		sort_three(t_node **a);
+int					algo_simple(t_node **stack_a, t_node **stack_b);
+int					get_best_path(int *info, int *path);
+int					get_min_pos(t_node *a);
+int					get_max_pos(t_node *b);
+int					get_target_a_pos(int val, t_node *a);
+int					get_target_b_pos(int val, t_node *b);
+int					get_cheapest_a_pos(t_node *a, t_node *b);
+int					max(int a, int b);
+void				exec_up(t_node **a, t_node **b, int p_a, int p_b);
+void				exec_down(t_node **a, t_node **b, int p_a, int p_b);
+void				execute_moves(t_node **a, t_node **b, int p_a, int p_b);
+void				push_cheapest_to_b(t_node **a, t_node **b);
+void				pull_back_to_a(t_node **a, t_node **b);
+void				sort_three(t_node **a);
 
-
-int				algo_medium(t_node **stack_a, t_node **stack_b);
-int				algo_complex(t_node **stack_a, t_node **stack_b);
-int				algo_adaptive(t_node **stack_a, t_node **stack_b, double disorder);
+int					algo_medium(t_node **stack_a, t_node **stack_b);
+int					algo_complex(t_node **stack_a, t_node **stack_b);
+int					algo_adaptive(t_node **stack_a, t_node **stack_b,
+						double disorder);
 
 // Temp functions
 void				print_stack(t_node *stack);

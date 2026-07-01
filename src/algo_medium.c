@@ -6,15 +6,16 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:50:24 by joavieir          #+#    #+#             */
-/*   Updated: 2026/06/28 14:56:35 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/01 23:19:22 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	set_ranks(t_node *stack_a)
+static	int set_ranks(t_node *stack_a)
 {
-	int *set_ranks
+	(void)stack_a;
+	return (1);
 }
 
 int	algo_medium(t_node **stack_a, t_node **stack_b)
@@ -37,7 +38,7 @@ int	algo_medium(t_node **stack_a, t_node **stack_b)
 		while (i <= chunk_size)
 		{
 			(*stack_a)->value;
-			stack_a = (*stack_a)->next;
+			*stack_a = (*stack_a)->next;
 			i++;
 		}
 		stack_b;

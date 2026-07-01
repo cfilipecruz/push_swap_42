@@ -6,10 +6,16 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:30:44 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/17 18:43:18 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/06/18 18:33:02 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(void)
+int	ft_sqrt(int n)
 {
+	int	i;
+
+	i = 1;
+	while (i <= n / i)
+		i++;
+	return (i);
 }

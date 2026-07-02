@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:01:57 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/02 02:20:15 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/02 02:21:37 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
 	int	flag;
 	double disorder;
 	
-	disorder = compute_disorder(*stack_a);
+	
 	i = 1;
 	bench = 0;
 	(void) bench;
@@ -77,5 +77,6 @@ int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
 				return (0);
 		i++;
 	}
+	disorder = compute_disorder(*stack_a);
 	return (run_algo(flag, stack_a, stack_b, disorder));
 }

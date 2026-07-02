@@ -3,38 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple_helpers.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 17:00:00 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/01 17:26:13 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/02 01:00:37 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	get_max_pos(t_node *b)
-{
-	t_node	*curr;
-	int		max_val;
-	int		max_pos;
-	int		i;
-
-	curr = b;
-	max_val = b->value;
-	max_pos = 0;
-	i = 0;
-	while (curr)
-	{
-		if (curr->value > max_val)
-		{
-			max_val = curr->value;
-			max_pos = i;
-		}
-		curr = curr->next;
-		i++;
-	}
-	return (max_pos);
-}
 
 int	get_target_b_pos(int val, t_node *b)
 {

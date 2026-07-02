@@ -53,4 +53,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean_objs clean fclean re
+visu: $(NAME)
+	ft_ps_visu ./$(NAME)
+
+.PHONY: all clean_objs clean fclean re visu

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_adaptive.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:50:24 by joavieir          #+#    #+#             */
-/*   Updated: 2026/06/17 18:52:30 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/02 02:16:20 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	algo_adaptive(t_node **stack_a, t_node **stack_b, double disorder)
 {
-	(void) stack_a;
-	(void) stack_b;
-	(void) disorder;
-	return (1);
+	if (disorder < 0.2)
+		return (algo_simple(stack_a, stack_b));
+	if (disorder < 0.5)
+		return (algo_medium(stack_a, stack_b));
+	return (algo_complex(stack_a, stack_b));
 }

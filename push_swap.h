@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/01 23:18:45 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/02 02:20:00 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int					append_node(t_node **node, int value);
 int					stack_size(t_node *stack);
 int					is_sorted(t_node *stack);
 int					init_stack(int argc, char **argv, t_node **stack_a,
-						t_node **stack_b, double disorder);
+						t_node **stack_b);
 t_node				*last_node(t_node *stack);
 
 int					error_exit(t_node *stack_a, t_node *stack_b);

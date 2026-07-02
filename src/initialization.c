@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialization.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:01:57 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/01 17:01:40 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/02 02:20:15 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,14 @@ static int	run_algo(int flag, t_node **stack_a, t_node **stack_b, double disorde
 		return (algo_adaptive(stack_a, stack_b, disorder));
 }
 
-int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b, double disorder)
+int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
 {
 	int	i;
 	int	bench;
 	int	flag;
-
+	double disorder;
+	
+	disorder = compute_disorder(*stack_a);
 	i = 1;
 	bench = 0;
 	(void) bench;

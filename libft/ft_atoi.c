@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 21:07:05 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/07 17:40:54 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/04 00:53:01 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	skip_whitespaces(char *atr)
 int	ft_atoi(char *atr)
 {
 	int	counter;
-	int	digit;
+	long	digit;
 	int	sign;
 
 	sign = 1;

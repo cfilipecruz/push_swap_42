@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:50:24 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/02 02:05:39 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/04 00:34:46 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,48 +61,6 @@ static void	chunker_move_to_a(t_node **stack_a, t_node **stack_b,
 			ra(stack_a);
 		}
 	}
-}
-
-static void	set_ranks(t_node *stack_a, int *temp_ranks)
-{
-	int	i;
-
-	i = 0;
-	while (stack_a)
-	{
-		stack_a->value = temp_ranks[i];
-		stack_a = stack_a->next;
-		i++;
-	}
-}
-
-static int	*get_ranks(t_node *stack_a, int size)
-{
-	int		*temp_ranks;
-	int		i;
-	int		rank;
-	t_node	*first;
-	t_node	*current;
-
-	i = 0;
-	temp_ranks = malloc(size * sizeof(int));
-	if (!temp_ranks)
-		return (free(temp_ranks), NULL);
-	current = stack_a;
-	while (current)
-	{
-		rank = 0;
-		first = stack_a;
-		while (first)
-		{
-			if (first->value < current->value)
-				rank++;
-			first = first->next;
-		}
-		temp_ranks[i++] = rank;
-		current = current->next;
-	}
-	return (temp_ranks);
 }
 
 int	algo_medium(t_node **stack_a, t_node **stack_b)

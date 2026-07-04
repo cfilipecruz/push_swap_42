@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:50:24 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/04 01:28:59 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/04 02:01:59 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,29 @@ static int	get_bit(int rank, int position)
 
 	rank = rank >> position;
 	bit = rank & 1;
-
 	return (bit);
 }
-static int	get_max_rank(int size)
+static int	get_rank_bits(int size)
 {
 	int	max_rank;
-	int	i;
+	int	bits;
 
 	max_rank = size - 1;
-	i = 0;
+	bits = 0;
 	while (max_rank > 0)
 	{
 		max_rank = max_rank >> 1;
-		i++;
+		bits++;
 	}
-	return (i);
+	return (bits);
 }
 
 int	algo_complex(t_node **stack_a, t_node **stack_b)
 {
 	int	*temp_ranks;
 	int	size;
-	int	max_rank;
-	int position;
+	int	bits;
+	int	position;
 
 	size = stack_size(*stack_a);
 	temp_ranks = get_ranks(*stack_a, size);
@@ -49,20 +48,25 @@ int	algo_complex(t_node **stack_a, t_node **stack_b)
 		return (0);
 	set_ranks(*stack_a, temp_ranks);
 	free(temp_ranks);
-	max_rank = get_max_rank(size);
+	bits = get_rank_bits(size);
 	position = 0;
-	while ()
+	while (position < bits)
 	{
-		while ()
+		size = stack_size(*stack_a);
+		while (size)
 		{
-			if (get_bit(max_rank, position))
-			{
-				pa(stack_a, stack_b);
-			}
-			else
+			if (get_bit((*stack_a)->value, position))
 			{
 				ra(stack_a);
 			}
+			else
+			{
+				pb(stack_a, stack_b);
+			}
+			size--;
+		}
+		while(*stack_b){
+			pa(stack_a, stack_b);
 		}
 		position++;
 	}

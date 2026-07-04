@@ -4,45 +4,73 @@
 
 ## Description
 
-# ---------------------------------------------------------------------------------------------------------------
+`push_swap` sorts a list of unique integers using two stacks and a limited set of
+operations. It prints the operations needed to leave stack A sorted in ascending
+order and stack B empty.
+
 ## Instructions
 
-### Compilation
+Compile with:
 
-### Usage
+```bash
+make
+```
 
-## Algorithm Explanation and Justification
+Run with a strategy and a list of integers:
 
-### Overview
+```bash
+./push_swap [--simple|--medium|--complex|--adaptive] [--bench] 4 2 1 3
+```
 
-## Project Structure
+Invalid numbers, duplicates and values outside the `int` range print `Error`.
 
-### File Description
+## Algorithms
 
-# ---------------------------------------------------------------------------------------------------------------
+Values are converted to ranks from `0` to `n - 1`. This keeps their relative
+order while making chunk and bit operations simpler.
+
+### Simple - O(n^2)
+
+A Turk-style insertion method moves the cheapest elements to B, sorts the three
+remaining values in A, and inserts every value back into its correct position.
+
+### Medium - O(n sqrt(n))
+
+A chunk method processes ranks through a moving window of about `sqrt(n)` values.
+Elements are pushed to B, then the largest values return to A using the shortest
+rotation direction.
+
+### Complex - O(n log n)
+
+An LSD binary radix sort reads one rank bit at a time. Values are separated with
+`pb` and `ra`, then returned with `pa`. Ranks avoid signed-bit handling and keep
+the number of passes close to `log2(n)`.
+
+### Adaptive
+
+The initial disorder is measured before any move:
+
+```text
+disorder < 0.20          simple
+0.20 <= disorder < 0.50 medium
+disorder >= 0.50         complex
+```
+
+This uses lighter work for ordered inputs and more scalable methods for higher
+disorder.
+
+## Contributions
+
+- `cmarques`: stack operations, utilities, validation, medium and complex strategies.
+- `joavieir`: initialization, utilities, disorder metric, simple strategy and
+  adaptive integration.
+- Both: testing, debugging and documentation.
+
 ## Resources
 
-### Documentation
+- Linux manual pages: `write`, `malloc`, `free`
+- *The C Programming Language*, Brian Kernighan and Dennis Ritchie
+- References on insertion methods, chunk sorting and binary radix sort
 
-* Linux Manual Pages:
-
-  * `man 2 read`
-  * `man 3 malloc`
-  * `man 3 free`
-
-### Articles and References
-
-* The C Programming Language — Brian Kernighan & Dennis Ritchie
-
-### AI Usage
-
-AI tools were used as learning and review assistants during the development of this project.
-
-Tasks assisted by AI:
-
-* Reviewing edge cases and potential memory management issues.
-* Verifying the correctness of the stash-based algorithm.
-* Drafting and improving project documentation.
-* ...
-
-All code design decisions, implementation, testing, debugging, and final validation were performed by the project authors.
+AI tools were used to explain concepts, review edge cases, suggest tests and help
+review the documentation. Every suggestion was checked and adapted by the authors.

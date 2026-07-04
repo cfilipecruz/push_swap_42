@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:01:57 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/02 02:21:37 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/04 02:31:36 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ static int	is_valid_flag(char *argument)
 	return (0);
 }
 
-static int	run_algo(int flag, t_node **stack_a, t_node **stack_b, double disorder)
+static int	run_algo(int flag, t_node **stack_a, t_node **stack_b,
+		double disorder)
 {
 	if (flag == STRATEGY_SIMPLE)
 		return (algo_simple(stack_a, stack_b));
@@ -55,15 +56,15 @@ static int	run_algo(int flag, t_node **stack_a, t_node **stack_b, double disorde
 
 int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
 {
-	int	i;
-	int	bench;
-	int	flag;
-	double disorder;
-	
-	
+	int		i;
+	int		bench;
+	int		flag;
+	double	disorder;
+
 	i = 1;
 	bench = 0;
-	(void) bench;
+	flag = STRATEGY_ADAPTIVE;
+	(void)bench;
 	while (i < argc)
 	{
 		if (is_flag(argv[i]))
@@ -72,9 +73,8 @@ int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
 			if (flag == MODE_BENCH)
 				bench = MODE_BENCH;
 		}
-		else
-			if (!handle_number(argv[i], stack_a))
-				return (0);
+		else if (!handle_number(argv[i], stack_a))
+			return (0);
 		i++;
 	}
 	disorder = compute_disorder(*stack_a);

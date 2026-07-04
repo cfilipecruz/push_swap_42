@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:30:00 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/12 23:27:05 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/04 23:00:21 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,6 @@ int	stack_size(t_node *stack)
 		stack = stack->next;
 	}
 	return (i);
-}
-
-int	is_sorted(t_node *stack)
-{
-	if (!stack)
-		return (1);
-	while (stack->next)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
 }
 
 t_node	*last_node(t_node *stack)

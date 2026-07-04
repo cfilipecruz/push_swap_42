@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:09:51 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/02 02:18:22 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/04 22:46:31 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,5 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (!init_stack(argc, argv, &stack_a, &stack_b))
 		return (error_exit(stack_a, stack_b));
-
-	if (is_sorted(stack_a))
-		return (clean_exit(stack_a, stack_b));
 	return (clean_exit(stack_a, stack_b));
 }

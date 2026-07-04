@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:01:57 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/04 02:31:36 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/04 23:06:35 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,9 @@ static int	is_valid_flag(char *argument)
 
 static int	run_algo(int flag, t_node **stack_a, t_node **stack_b,
 		double disorder)
-{
-	if (flag == STRATEGY_SIMPLE)
+{	if(stack_size(*stack_a) == 2)
+		return(ra(stack_a));
+	if (flag == STRATEGY_SIMPLE || stack_size(*stack_a) <= 5)
 		return (algo_simple(stack_a, stack_b));
 	else if (flag == STRATEGY_MEDIUM)
 		return (algo_medium(stack_a, stack_b));
@@ -78,5 +79,7 @@ int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
 		i++;
 	}
 	disorder = compute_disorder(*stack_a);
+	if (disorder == 0)
+		return (1);
 	return (run_algo(flag, stack_a, stack_b, disorder));
 }

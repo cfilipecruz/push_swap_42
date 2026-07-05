@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 00:55:41 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/05 01:28:13 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:56:55 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ void	set_ranks(t_node *stack_a, int *temp_ranks)
 
 int	*get_ranks(t_node *stack_a, int size)
 {
-	int *temp_ranks;
-	int i;
-	int rank;
-	t_node *first;
-	t_node *current;
+	int		*temp_ranks;
+	int		i;
+	int		rank;
+	t_node	*first;
+	t_node	*current;
 
 	i = 0;
 	temp_ranks = malloc(size * sizeof(int));

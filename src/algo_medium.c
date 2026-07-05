@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:50:24 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/05 01:43:12 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:50:59 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void	rotate_max_to_top(t_node **stack_b)
 		}
 	}
 }
+
 static void	chunker_move_to_a(t_node **stack_a, t_node **stack_b)
 {
 	while (*stack_b)

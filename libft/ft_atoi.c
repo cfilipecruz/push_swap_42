@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 21:07:05 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/04 00:53:01 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:50:09 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int	skip_whitespaces(const char *atr)
 
 int	ft_atoi(const char *atr)
 {
-	int	counter;
+	int		counter;
 	long	digit;
-	int	sign;
+	int		sign;
 
 	sign = 1;
 	digit = 0;

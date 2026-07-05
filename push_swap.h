@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/05 01:16:09 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:46:56 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ int					*get_ranks(t_node *stack_a, int size);
 /* utils.c */
 int					error_exit(t_node *stack_a, t_node *stack_b);
 int					clean_exit(t_node *stack_a, t_node *stack_b);
-int					min_value(t_node *stack);
-int					max_value(t_node *stack);
 void				print_error(void);
 void				free_stack(t_node *stack);
 

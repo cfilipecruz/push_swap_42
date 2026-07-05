@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 17:59:41 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/17 15:53:33 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:45:44 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,36 +42,4 @@ void	free_stack(t_node *stack)
 		free(stack);
 		stack = next;
 	}
-}
-
-int	min_value(t_node *stack)
-{
-	int	min;
-
-	if (!stack)
-		return (0);
-	min = stack->value;
-	while (stack)
-	{
-		if (stack->value < min)
-			min = stack->value;
-		stack = stack->next;
-	}
-	return (min);
-}
-
-int	max_value(t_node *stack)
-{
-	int	max;
-
-	if (!stack)
-		return (0);
-	max = stack->value;
-	while (stack)
-	{
-		if (stack->value > max)
-			max = stack->value;
-		stack = stack->next;
-	}
-	return (max);
 }

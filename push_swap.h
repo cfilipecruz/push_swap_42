@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/05 01:46:56 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 02:04:38 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ typedef enum e_strategy
 
 typedef enum e_mode
 {
-	MODE_INVALID,
-	MODE_BENCH
+	MODE_INVALID = -1,
+	MODE_BENCH = 4
 }					t_mode;
 
 /* initialization.c */

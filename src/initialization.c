@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:01:57 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/05 01:27:22 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 02:05:08 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	is_valid_flag(char *argument)
 		return (STRATEGY_ADAPTIVE);
 	if (ft_strncmp(argument, "--bench", 8) == 0)
 		return (MODE_BENCH);
-	return (0);
+	return (MODE_INVALID);
 }
 
 static int	run_algo(int flag, t_node **stack_a, t_node **stack_b,

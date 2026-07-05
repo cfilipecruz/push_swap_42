@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 17:00:00 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/02 01:00:37 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:29:31 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int	get_target_b_pos(int val, t_node *b)
 	i = 0;
 	while (curr)
 	{
-		if (curr->value < val && (target_pos == -1
-				|| curr->value > target_val))
+		if (curr->value < val && (target_pos == -1 || curr->value > target_val))
 		{
 			target_val = curr->value;
 			target_pos = i;
@@ -74,8 +73,7 @@ int	get_target_a_pos(int val, t_node *a)
 	i = 0;
 	while (curr)
 	{
-		if (curr->value > val && (target_pos == -1
-				|| curr->value < target_val))
+		if (curr->value > val && (target_pos == -1 || curr->value < target_val))
 		{
 			target_val = curr->value;
 			target_pos = i;

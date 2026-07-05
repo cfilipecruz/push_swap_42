@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:10 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/05 02:01:11 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/05 03:33:35 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	sb(t_node *stack_b)
 		benchmark("sb");
 		return (1);
 	}
-	return(0);
+	return (0);
 }
 
 int	ss(t_node *stack_a, t_node *stack_b)
@@ -54,6 +54,5 @@ int	ss(t_node *stack_a, t_node *stack_b)
 		benchmark("ss");
 		return(1);
 	}
-	return(0);
-		
+	return (0);
 }

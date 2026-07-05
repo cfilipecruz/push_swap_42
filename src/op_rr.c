@@ -6,7 +6,11 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 00:02:23 by cmarques          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2026/07/05 02:00:31 by joavieir         ###   ########.fr       */
+=======
+/*   Updated: 2026/07/05 01:26:53 by cmarques         ###   ########.fr       */
+>>>>>>> f961ac93cd39cb18b99dabd68a4729af28b9dfcf
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +47,7 @@ int	rra(t_node **stack_a)
 
 int	rrb(t_node **stack_b)
 {
-	int ret;
+	int	ret;
 
 	ret = rotate_stack_reverse(stack_b);
 	if (ret)

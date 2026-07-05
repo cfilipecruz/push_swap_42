@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple_exec.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:07:05 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/01 17:25:40 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:56:41 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

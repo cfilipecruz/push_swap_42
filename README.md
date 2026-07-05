@@ -49,9 +49,9 @@ operations and there are `log2(n)` bits, giving `O(n log n)` operations and
 The initial disorder is measured before any move:
 
 ```text
-disorder < 0.20          simple
-0.20 <= disorder < 0.50 medium
-disorder >= 0.50         complex
+disorder < 0.20             simple
+0.20 <= disorder < 0.50     medium
+disorder >= 0.50            complex
 ```
 
 Low disorder uses insertion because few values need repositioning. Medium
@@ -62,7 +62,7 @@ strategy uses at most `O(n)` extra space.
 ## Contributions
 
 - `cmarques`: stack operations, utilities, validation, medium and complex strategies.
-- `joavieir`: initialization, utilities, disorder metric, simple strategy and
+- `joavieir`: initialization, utilities, disorder metric, simple strategy, bench mode implementation and
   adaptive integration.
 - Both: testing, debugging and documentation.
 

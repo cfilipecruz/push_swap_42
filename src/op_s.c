@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:10 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/05 01:26:49 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 03:33:35 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	sa(t_node *stack_a)
 {
 	if (stack_swap(stack_a))
 	{
-		write(1, "sa\n", 3);
+		benchmark("sa");
 		return (1);
 	}
 	return (0);
@@ -36,9 +36,8 @@ int	sa(t_node *stack_a)
 
 int	sb(t_node *stack_b)
 {
-	if (stack_swap(stack_b))
-	{
-		write(1, "sb\n", 3);
+	if (stack_swap(stack_b)){
+		benchmark("sb");
 		return (1);
 	}
 	return (0);
@@ -51,10 +50,9 @@ int	ss(t_node *stack_a, t_node *stack_b)
 
 	swapped_a = stack_swap(stack_a);
 	swapped_b = stack_swap(stack_b);
-	if (swapped_a || swapped_b)
-	{
-		write(1, "ss\n", 3);
-		return (1);
+	if (swapped_a || swapped_b){
+		benchmark("ss");
+		return(1);
 	}
 	return (0);
 }

@@ -6,7 +6,11 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2026/07/05 02:04:38 by cmarques         ###   ########.fr       */
+=======
+/*   Updated: 2026/07/05 03:40:35 by joavieir         ###   ########.fr       */
+>>>>>>> origin/main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +20,7 @@
 # include "libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
+
 
 typedef struct s_node
 {
@@ -38,7 +43,7 @@ typedef enum e_mode
 }					t_mode;
 
 /* initialization.c */
-int					init_stack(int argc, char **argv, t_node **stack_a,
+int					exec_stack(int argc, char **argv, t_node **stack_a,
 						t_node **stack_b);
 
 /* args_handle.c */
@@ -116,4 +121,11 @@ int					algo_complex(t_node **stack_a, t_node **stack_b);
 /* algo_adaptive.c */
 int					algo_adaptive(t_node **stack_a, t_node **stack_b,
 						double disorder);
+
+/* benchmark.c */
+void				benchmark(const char *move);
+void				benchmark_start(double disorder, t_strategy strat);
+
+/* temp_functions.c */
+void				print_stack(t_node *stack);
 #endif

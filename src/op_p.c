@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 20:50:26 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/17 15:17:25 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:59:11 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	pa(t_node **stack_a, t_node **stack_b)
 
 	ret = push_node(stack_b, stack_a);
 	if (ret)
-		write(1, "pa\n", 3);
+		benchmark("pa");
 	return (ret);
 }
 
@@ -41,6 +41,6 @@ int	pb(t_node **stack_a, t_node **stack_b)
 
 	ret = push_node(stack_a, stack_b);
 	if (ret)
-		write(1, "pb\n", 3);
+		benchmark("pb");
 	return (ret);
 }

@@ -26,25 +26,23 @@ Invalid numbers, duplicates and values outside the `int` range print `Error`.
 
 ## Algorithms
 
-Values are converted to ranks from `0` to `n - 1`. This keeps their relative
-order while making chunk and bit operations simpler.
-
 ### Simple - O(n^2)
 
 A Turk-style insertion method moves the cheapest elements to B, sorts the three
-remaining values in A, and inserts every value back into its correct position.
+remaining values, and inserts everything back in order. Each of the `n` values
+may need `O(n)` moves, giving `O(n^2)` operations and `O(1)` extra space.
 
 ### Medium - O(n sqrt(n))
 
-A chunk method processes ranks through a moving window of about `sqrt(n)` values.
-Elements are pushed to B, then the largest values return to A using the shortest
-rotation direction.
+Values are ranked from `0` to `n - 1` and processed in a moving window of about
+`sqrt(n)` values. There are about `sqrt(n)` groups, each costing up to `O(n)`
+moves, so the limit is `O(n sqrt(n))` operations and `O(n)` extra space.
 
 ### Complex - O(n log n)
 
-An LSD binary radix sort reads one rank bit at a time. Values are separated with
-`pb` and `ra`, then returned with `pa`. Ranks avoid signed-bit handling and keep
-the number of passes close to `log2(n)`.
+LSD binary radix sort reads one rank bit per pass. Each pass uses at most `2n`
+operations and there are `log2(n)` bits, giving `O(n log n)` operations and
+`O(n)` extra space. Ranks also avoid signed-bit handling.
 
 ### Adaptive
 
@@ -56,8 +54,10 @@ disorder < 0.20          simple
 disorder >= 0.50         complex
 ```
 
-This uses lighter work for ordered inputs and more scalable methods for higher
-disorder.
+Low disorder uses insertion because few values need repositioning. Medium
+disorder uses chunks to avoid full radix passes. High disorder uses radix for a
+predictable `O(n log n)` limit. Ranking arrays are temporary, so the adaptive
+strategy uses at most `O(n)` extra space.
 
 ## Contributions
 

@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:50:24 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/04 00:34:46 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:09:11 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	chunker_move_to_b(t_node **stack_a, t_node **stack_b)
 	{
 		position = get_max_pos(*stack_b);
 		size = stack_size(*stack_b);
-		if (size / 2 <= position)
+		if (position > size / 2)
 		{
 			moves = size - position;
 			while (moves > 0)

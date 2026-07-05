@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 17:55:57 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/12 23:26:55 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:27:28 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,3 @@ int	is_valid_number(char *s)
 	}
 	return (1);
 }
-
-

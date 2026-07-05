@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/04 00:36:00 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:16:09 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,4 @@ int					algo_complex(t_node **stack_a, t_node **stack_b);
 /* algo_adaptive.c */
 int					algo_adaptive(t_node **stack_a, t_node **stack_b,
 						double disorder);
-
-/* temp_functions.c */
-void				print_stack(t_node *stack);
 #endif

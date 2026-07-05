@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	skip_whitespaces(char *atr)
+#include "libft.h"
+
+static int	skip_whitespaces(const char *atr)
 {
 	int	counter;
 
@@ -21,7 +23,7 @@ static int	skip_whitespaces(char *atr)
 	return (counter);
 }
 
-int	ft_atoi(char *atr)
+int	ft_atoi(const char *atr)
 {
 	int	counter;
 	long	digit;

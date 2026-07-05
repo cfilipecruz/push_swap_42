@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_simple_exec.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:07:05 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/01 17:25:40 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:29:39 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ void	exec_down(t_node **a, t_node **b, int p_a, int p_b)
 
 void	execute_moves(t_node **a, t_node **b, int p_a, int p_b)
 {
-	int	path;
-	int	info[4];
+	int path;
+	int info[4];
 
 	info[0] = p_a;
 	info[1] = p_b;

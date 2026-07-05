@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:45:00 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/10 18:45:00 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:27:10 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ double	compute_disorder(t_node *stack)
 	}
 	if (total_pairs == 0)
 		return (0);
-	return ((double) mistakes / total_pairs);
+	return ((double)mistakes / total_pairs);
 }

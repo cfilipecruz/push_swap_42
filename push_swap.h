@@ -5,12 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/07/05 02:04:38 by cmarques         ###   ########.fr       */
-=======
-/*   Updated: 2026/07/05 03:40:35 by joavieir         ###   ########.fr       */
->>>>>>> origin/main
+/*   Created: 2026/07/05 13:34:27 by cmarques          #+#    #+#             */
+/*   Updated: 2026/07/05 13:34:47 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +16,6 @@
 # include "libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
-
 
 typedef struct s_node
 {

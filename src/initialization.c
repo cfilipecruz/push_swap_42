@@ -5,14 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/17 18:01:57 by joavieir          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/07/05 02:05:08 by cmarques         ###   ########.fr       */
-=======
-/*   Updated: 2026/07/05 03:40:52 by joavieir         ###   ########.fr       */
->>>>>>> origin/main
+/*   Created: 2026/07/05 13:37:03 by cmarques          #+#    #+#             */
+/*   Updated: 2026/07/05 13:37:18 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "push_swap.h"
 

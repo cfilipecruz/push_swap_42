@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/05 03:32:26 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/05 03:40:35 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
+
 
 typedef struct s_node
 {
@@ -89,7 +90,7 @@ int					rrb(t_node **stack_b);
 int					rrr(t_node **stack_a, t_node **stack_b);
 
 /* algo_simple.c */
-int					algo_simple(t_node **stack_a, t_node **stack_b, int bench);
+int					algo_simple(t_node **stack_a, t_node **stack_b);
 void				pull_back_to_a(t_node **a, t_node **b);
 void				push_cheapest_to_b(t_node **a, t_node **b);
 void				sort_three(t_node **a);
@@ -108,14 +109,14 @@ int					get_target_b_pos(int val, t_node *b);
 int					get_cheapest_a_pos(t_node *a, t_node *b);
 
 /* algo_medium.c */
-int					algo_medium(t_node **stack_a, t_node **stack_b, int bench);
+int					algo_medium(t_node **stack_a, t_node **stack_b);
 
 /* algo_complex.c */
-int					algo_complex(t_node **stack_a, t_node **stack_b, int bench);
+int					algo_complex(t_node **stack_a, t_node **stack_b);
 
 /* algo_adaptive.c */
 int					algo_adaptive(t_node **stack_a, t_node **stack_b,
-						double disorder, int bench);
+						double disorder);
 
 /* benchmark.c */
 void				benchmark(const char *move);

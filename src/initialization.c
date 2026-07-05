@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:01:57 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/05 03:32:53 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/05 03:40:52 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ static int	run_algo(int flag, t_node **stack_a, t_node **stack_b,
 	if (stack_size(*stack_a) == 2)
 		ret = ra(stack_a);
 	else if (flag == STRATEGY_SIMPLE || stack_size(*stack_a) <= 5)
-		ret = algo_simple(stack_a, stack_b, bench);
+		ret = algo_simple(stack_a, stack_b);
 	else if (flag == STRATEGY_MEDIUM)
-		ret = algo_medium(stack_a, stack_b, bench);
+		ret = algo_medium(stack_a, stack_b);
 	else if (flag == STRATEGY_COMPLEX)
-		ret = algo_complex(stack_a, stack_b, bench);
+		ret = algo_complex(stack_a, stack_b);
 	else
-		ret = algo_adaptive(stack_a, stack_b, disorder, bench);
+		ret = algo_adaptive(stack_a, stack_b, disorder);
 
 	if (bench)
 		benchmark("benchend");

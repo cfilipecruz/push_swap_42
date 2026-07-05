@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (!init_stack(argc, argv, &stack_a, &stack_b))
+	if (!exec_stack(argc, argv, &stack_a, &stack_b))
 		return (error_exit(stack_a, stack_b));
 	return (clean_exit(stack_a, stack_b));
 }

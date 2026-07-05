@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 16:10:16 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/04 00:36:00 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 03:18:15 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef enum e_mode
 }					t_mode;
 
 /* initialization.c */
-int					init_stack(int argc, char **argv, t_node **stack_a,
+int					exec_stack(int argc, char **argv, t_node **stack_a,
 						t_node **stack_b);
 
 /* args_handle.c */
@@ -91,7 +91,7 @@ int					rrb(t_node **stack_b);
 int					rrr(t_node **stack_a, t_node **stack_b);
 
 /* algo_simple.c */
-int					algo_simple(t_node **stack_a, t_node **stack_b);
+int					algo_simple(t_node **stack_a, t_node **stack_b, int bench);
 void				pull_back_to_a(t_node **a, t_node **b);
 void				push_cheapest_to_b(t_node **a, t_node **b);
 void				sort_three(t_node **a);
@@ -110,14 +110,18 @@ int					get_target_b_pos(int val, t_node *b);
 int					get_cheapest_a_pos(t_node *a, t_node *b);
 
 /* algo_medium.c */
-int					algo_medium(t_node **stack_a, t_node **stack_b);
+int					algo_medium(t_node **stack_a, t_node **stack_b, int bench);
 
 /* algo_complex.c */
-int					algo_complex(t_node **stack_a, t_node **stack_b);
+int					algo_complex(t_node **stack_a, t_node **stack_b, int bench);
 
 /* algo_adaptive.c */
 int					algo_adaptive(t_node **stack_a, t_node **stack_b,
-						double disorder);
+						double disorder, int bench);
+
+/* benchmark.c */
+void				benchmark(const char *move);
+void				benchmark_start(double disorder, t_strategy strat);
 
 /* temp_functions.c */
 void				print_stack(t_node *stack);

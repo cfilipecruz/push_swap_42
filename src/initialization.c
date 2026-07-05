@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:01:57 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/04 23:06:35 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/05 03:23:03 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,30 +42,39 @@ static int	is_valid_flag(char *argument)
 }
 
 static int	run_algo(int flag, t_node **stack_a, t_node **stack_b,
-		double disorder)
-{	if(stack_size(*stack_a) == 2)
-		return(ra(stack_a));
-	if (flag == STRATEGY_SIMPLE || stack_size(*stack_a) <= 5)
-		return (algo_simple(stack_a, stack_b));
+		double disorder, int bench)
+{
+	int	ret;
+
+	if (bench)
+		benchmark_start(disorder, flag);
+	if (stack_size(*stack_a) == 2)
+		ret = ra(stack_a);
+	else if (flag == STRATEGY_SIMPLE || stack_size(*stack_a) <= 5)
+		ret = algo_simple(stack_a, stack_b, bench);
 	else if (flag == STRATEGY_MEDIUM)
-		return (algo_medium(stack_a, stack_b));
+		ret = algo_medium(stack_a, stack_b, bench);
 	else if (flag == STRATEGY_COMPLEX)
-		return (algo_complex(stack_a, stack_b));
+		ret = algo_complex(stack_a, stack_b, bench);
 	else
-		return (algo_adaptive(stack_a, stack_b, disorder));
+		ret = algo_adaptive(stack_a, stack_b, disorder, bench);
+
+	if (bench)
+		benchmark("benchend");
+	return (ret);
 }
 
-int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
+int	exec_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
 {
 	int		i;
 	int		bench;
+	int		mode;
 	int		flag;
-	double	disorder;
 
 	i = 1;
-	bench = 0;
-	flag = STRATEGY_ADAPTIVE;
-	(void)bench;
+	bench = MODE_INVALID;
+	mode = MODE_INVALID;
+	flag = 0;
 	while (i < argc)
 	{
 		if (is_flag(argv[i]))
@@ -73,13 +82,23 @@ int	init_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
 			flag = is_valid_flag(argv[i]);
 			if (flag == MODE_BENCH)
 				bench = MODE_BENCH;
+			else
+			{
+				if (mode != MODE_INVALID)
+					return (-1); // TODO throw proper error here (printing "Error" etc.)
+				else
+					mode = flag;
+			}
 		}
 		else if (!handle_number(argv[i], stack_a))
 			return (0);
 		i++;
 	}
-	disorder = compute_disorder(*stack_a);
-	if (disorder == 0)
-		return (1);
-	return (run_algo(flag, stack_a, stack_b, disorder));
+	if (mode == MODE_INVALID)
+		mode = STRATEGY_ADAPTIVE;
+	if (bench == MODE_BENCH)
+		benchmark("bench");
+	else
+		benchmark("!bench");
+	return (run_algo(mode, stack_a, stack_b, compute_disorder(*stack_a), bench));
 }

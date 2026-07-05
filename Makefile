@@ -22,8 +22,8 @@ SRCS = src/push_swap.c \
 	src/algo_simple_helpers.c \
 	src/algo_medium.c \
 	src/algo_complex.c \
-	src/algo_adaptive.c
-
+	src/algo_adaptive.c \
+	src/benchmark.c
 
 OBJS = $(SRCS:.c=.o)
 

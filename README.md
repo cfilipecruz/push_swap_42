@@ -51,9 +51,9 @@ the number of passes close to `log2(n)`.
 The initial disorder is measured before any move:
 
 ```text
-disorder < 0.20          simple
-0.20 <= disorder < 0.50 medium
-disorder >= 0.50         complex
+disorder < 0.20             simple
+0.20 <= disorder < 0.50     medium
+disorder >= 0.50            complex
 ```
 
 This uses lighter work for ordered inputs and more scalable methods for higher
@@ -62,7 +62,7 @@ disorder.
 ## Contributions
 
 - `cmarques`: stack operations, utilities, validation, medium and complex strategies.
-- `joavieir`: initialization, utilities, disorder metric, simple strategy and
+- `joavieir`: initialization, utilities, disorder metric, simple strategy, bench mode implementation and
   adaptive integration.
 - Both: testing, debugging and documentation.
 

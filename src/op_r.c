@@ -6,7 +6,7 @@
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 22:03:31 by cmarques          #+#    #+#             */
-/*   Updated: 2026/06/17 16:03:01 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/05 01:59:48 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ra(t_node **stack_a)
 
 	ret = rotate_stack(stack_a);
 	if (ret)
-		write(1, "ra\n", 3);
+		benchmark("ra");
 	return (ret);
 }
 
@@ -44,7 +44,7 @@ int	rb(t_node **stack_b)
 
 	ret = rotate_stack(stack_b);
 	if (ret)
-		write(1, "rb\n", 3);
+		benchmark("rb");
 	return (ret);
 }
 
@@ -56,6 +56,6 @@ int	rr(t_node **stack_a, t_node **stack_b)
 	rotated_a = rotate_stack(stack_a);
 	rotated_b = rotate_stack(stack_b);
 	if (rotated_a || rotated_b)
-		write(1, "rr\n", 3);
+		benchmark("rr");
 	return (rotated_a || rotated_b);
 }

@@ -6,7 +6,7 @@
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 01:48:23 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/05 03:25:12 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 14:55:27 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	benchmark_start(double disorder, t_strategy strat)
 	if (strat == STRATEGY_SIMPLE)
 		strat_string = ft_strdup("Simple / O(n2)");
 	else if (strat == STRATEGY_MEDIUM)
-		strat_string = ft_strdup("Adaptive / O(n√n)");
+		strat_string = ft_strdup("Medium / O(n√n)");
 	else if (strat == STRATEGY_COMPLEX)
 		strat_string = ft_strdup("Complex / O(n log n)");
 	else if (strat == STRATEGY_ADAPTIVE)

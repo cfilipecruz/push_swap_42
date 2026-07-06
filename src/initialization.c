@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 13:37:03 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/05 13:37:18 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/06 14:47:09 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	run_algo(int flag, t_node **stack_a, t_node **stack_b,
 {
 	int	ret;
 
-	if (bench)
+	if (bench == MODE_BENCH)
 		benchmark_start(disorder, flag);
 	if (stack_size(*stack_a) == 2)
 		ret = ra(stack_a);
@@ -60,7 +60,7 @@ static int	run_algo(int flag, t_node **stack_a, t_node **stack_b,
 	else
 		ret = algo_adaptive(stack_a, stack_b, disorder);
 
-	if (bench)
+	 if (bench == MODE_BENCH)
 		benchmark("benchend");
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 17:07:19 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/05 01:50:27 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/06 20:16:43 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int	algo_simple(t_node **stack_a, t_node **stack_b)
 	int	min_pos;
 	int	size_a;
 
+	if (stack_size(*stack_a) == 2)
+		return (ra(stack_a));
 	if (stack_size(*stack_a) > 3)
 		pb(stack_a, stack_b);
 	if (stack_size(*stack_a) > 3)

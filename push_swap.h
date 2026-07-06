@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 13:34:27 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/06 18:34:36 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 20:32:34 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 
 typedef enum e_strategy
 {
-	STRATEGY_SIMPLE,
-	STRATEGY_MEDIUM,
-	STRATEGY_COMPLEX,
-	STRATEGY_ADAPTIVE,
+	STRATEGY_SIMPLE = 0,
+	STRATEGY_MEDIUM = 1,
+	STRATEGY_COMPLEX = 2,
+	STRATEGY_ADAPTIVE = 3,
 }					t_strategy;
 
 typedef enum e_mode
 {
-	MODE_INVALID = -1,
-	MODE_BENCH = 4
+	MODE_INVALID = 5,
+	MODE_BENCH = 6
 }					t_mode;
 
 typedef struct s_node

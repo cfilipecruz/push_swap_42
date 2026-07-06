@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 13:37:03 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/06 19:28:21 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 20:32:36 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,12 @@ static int	run_algo(t_node **stack_a, t_node **stack_b,
 
 	if (is_sorted(*stack_a))
 		return (1);
-	if (options.bench == MODE_BENCH)
-		benchmark_start(disorder, options.strat);
-	if (stack_size(*stack_a) == 2)
-		ret = ra(stack_a);
-	else if (options.strat == STRATEGY_SIMPLE || stack_size(*stack_a) <= 5)
+	if (options.strat == (t_strategy) MODE_INVALID && stack_size(*stack_a) <= 5)
+	{
+		options.strat = STRATEGY_SIMPLE;
+		ret = algo_simple(stack_a, stack_b);
+	}
+	else if (options.strat == STRATEGY_SIMPLE)
 		ret = algo_simple(stack_a, stack_b);
 	else if (options.strat == STRATEGY_MEDIUM)
 		ret = algo_medium(stack_a, stack_b);
@@ -60,6 +61,8 @@ static int	run_algo(t_node **stack_a, t_node **stack_b,
 		ret = algo_complex(stack_a, stack_b);
 	else
 		ret = algo_adaptive(stack_a, stack_b, disorder);
+	if (options.bench == MODE_BENCH)
+		benchmark_start(disorder, options.strat);
 	if (options.bench == MODE_BENCH)
 		benchmark("benchend");
 	return (ret);

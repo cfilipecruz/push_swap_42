@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:30:00 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/06 17:27:22 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 18:44:13 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ int	is_sorted(t_node *stack)
 		if (cur->value > cur->next->value)
 		{
 			sorted = 0;
-			break;
-		}	
+			break ;
+		}
 		cur = cur->next;
 	}
 	return (sorted);

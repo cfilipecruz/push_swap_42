@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 13:34:27 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/06 15:26:40 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 18:34:36 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include <stdlib.h>
+# include "libft/ft_printf.h"
 # include <unistd.h>
 
 typedef enum e_strategy

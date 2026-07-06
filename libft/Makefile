@@ -6,7 +6,7 @@
 #    By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/20 17:36:13 by cmarques          #+#    #+#              #
-#    Updated: 2026/05/07 18:25:28 by cmarques         ###   ########.fr        #
+#    Updated: 2026/07/06 18:28:28 by joavieir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC =  ft_atoi.c \
        ft_putchar_fd.c \
        ft_putendl_fd.c \
        ft_putnbr_fd.c \
+       ft_putunbr_fd.c \
        ft_putstr_fd.c \
        ft_split.c \
        ft_strchr.c \
@@ -57,7 +58,8 @@ SRC =  ft_atoi.c \
        ft_strtrim.c \
        ft_substr.c \
        ft_tolower.c \
-       ft_toupper.c
+       ft_toupper.c \
+       ft_printf.c
 
 OBJ = $(SRC:.c=.o)
 

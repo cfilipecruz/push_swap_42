@@ -6,7 +6,7 @@
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 01:48:23 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/06 17:17:23 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 18:36:28 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ static void	benchmark_end(int *moves, int is_on)
 {
 	if (is_on != 1)
 		return ;
-	fprintf(stderr, "[bench] total_ops: %d\n", total_moves(moves));
-	fprintf(stderr, "[bench] sa: %d  sb: %d  ss: %d  pa: %d  pb: %d\n",
+	ft_printf(2, "[bench] total_ops: %d\n", total_moves(moves));
+	ft_printf(2, "[bench] sa: %d  sb: %d  ss: %d  pa: %d  pb: %d\n",
 		moves[0], moves[1], moves[2], moves[3], moves[4]);
-	fprintf(stderr,
+	ft_printf(2,
 		"[bench] ra: %d  rb: %d  rr: %d  rra: %d  rrb: %d  rrr: %d\n",
 		moves[5], moves[6], moves[7], moves[8], moves[9], moves[10]);
 }
@@ -83,8 +83,8 @@ void	benchmark_start(double disorder, t_strategy strat)
 	}
 	else
 		strat_string = ft_strdup("\n[error] Something went VERY WRONG");
-	fprintf(stderr, "[bench] disorder: %f%%\n", disorder * 100);
-	fprintf(stderr, "[bench] strategy: %s\n", strat_string);
+	ft_printf(2, "[bench] disorder: %f%%\n", disorder * 100);
+	ft_printf(2, "[bench] strategy: %s\n", strat_string);
 }
 
 void	benchmark(const char *move)
@@ -100,7 +100,7 @@ void	benchmark(const char *move)
 		benchmark_end(moves, is_on);
 	else
 	{
-		printf("%s\n", move);
+		ft_printf(1, "%s\n", move);
 		append_move_to_list(moves, move);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 19:33:02 by cmarques          #+#    #+#             */
-/*   Updated: 2026/05/05 17:45:29 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/06 18:28:53 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ int					ft_atoi(const char *nptr);
 void				ft_bzero(void *s, size_t n);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 
-void				ft_putchar_fd(char c, int fd);
-void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
-void				ft_putstr_fd(char *s, int fd);
+int					ft_putchar_fd(char c, int fd);
+int					ft_putendl_fd(char *s, int fd);
+int					ft_putnbr_fd(int n, int fd);
+int					ft_putunbr_fd(unsigned int n, int fd);
+int					ft_putstr_fd(char *s, int fd);
 
 char				*ft_itoa(int n);
 char				*ft_strchr(const char *s, int c);

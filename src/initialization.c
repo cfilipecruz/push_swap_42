@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 13:37:03 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/06 20:32:36 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 20:39:06 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,8 +110,6 @@ int	exec_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
 		return (0);
 	if (stack_size(*stack_a) == 0)
 		return (0);
-	if (options.strat == (t_strategy) MODE_INVALID)
-		options.strat = STRATEGY_ADAPTIVE;
 	if (options.bench == MODE_BENCH)
 		benchmark("bench");
 	else

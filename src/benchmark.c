@@ -6,7 +6,7 @@
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 01:48:23 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/06 18:36:28 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 19:05:48 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,27 @@ static int	total_moves(int *moves)
 
 static void	append_move_to_list(int *moves, const char *move)
 {
-	if (ft_strncmp(move, "sa", 2))
+	if (ft_strncmp(move, "sa", 3) == 0)
 		moves[0]++;
-	else if (ft_strncmp(move, "sb", 2))
+	else if (ft_strncmp(move, "sb", 3) == 0)
 		moves[1]++;
-	else if (ft_strncmp(move, "ss", 2))
+	else if (ft_strncmp(move, "ss", 3) == 0)
 		moves[2]++;
-	else if (ft_strncmp(move, "pa", 2))
+	else if (ft_strncmp(move, "pa", 3) == 0)
 		moves[3]++;
-	else if (ft_strncmp(move, "pb", 2))
+	else if (ft_strncmp(move, "pb", 3) == 0)
 		moves[4]++;
-	else if (ft_strncmp(move, "ra", 2))
+	else if (ft_strncmp(move, "ra", 3) == 0)
 		moves[5]++;
-	else if (ft_strncmp(move, "rb", 2))
+	else if (ft_strncmp(move, "rb", 3) == 0)
 		moves[6]++;
-	else if (ft_strncmp(move, "rr", 2))
+	else if (ft_strncmp(move, "rr", 3) == 0)
 		moves[7]++;
-	else if (ft_strncmp(move, "rra", 2))
+	else if (ft_strncmp(move, "rra", 4) == 0)
 		moves[8]++;
-	else if (ft_strncmp(move, "rrb", 2))
+	else if (ft_strncmp(move, "rrb", 4) == 0)
 		moves[9]++;
-	else if (ft_strncmp(move, "rrr", 2))
+	else if (ft_strncmp(move, "rrr", 4) == 0)
 		moves[10]++;
 }
 
@@ -83,10 +83,9 @@ void	benchmark_start(double disorder, t_strategy strat)
 	}
 	else
 		strat_string = ft_strdup("\n[error] Something went VERY WRONG");
-	ft_printf(2, "[bench] disorder: %f%%\n", disorder * 100);
+	ft_printf(2, "[bench] disorder: %d.%d%%\n", (int) (disorder * 100), (int) (disorder * 10000) % 100);
 	ft_printf(2, "[bench] strategy: %s\n", strat_string);
 }
-
 void	benchmark(const char *move)
 {
 	static int	is_on;

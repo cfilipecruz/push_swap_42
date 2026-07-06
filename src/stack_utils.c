@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:30:00 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/04 23:00:21 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/06 17:27:22 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,23 @@ int	has_duplicate(t_node *stack, int value)
 		stack = stack->next;
 	}
 	return (0);
+}
+
+int	is_sorted(t_node *stack)
+{
+	int		sorted;
+	t_node	*cur;
+
+	sorted = 1;
+	cur = stack;
+	while (cur->next)
+	{
+		if (cur->value > cur->next->value)
+		{
+			sorted = 0;
+			break;
+		}	
+		cur = cur->next;
+	}
+	return (sorted);
 }

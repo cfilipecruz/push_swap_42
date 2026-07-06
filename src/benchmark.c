@@ -6,7 +6,7 @@
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 01:48:23 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/06 15:01:14 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 17:17:23 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,9 @@ void	benchmark_start(double disorder, t_strategy strat)
 		else
 			strat_string = ft_strdup("Adaptive / O(n log n)");
 	}
-	fprintf(stderr, "[bench] disorder: %.2f\n", disorder);
+	else
+		strat_string = ft_strdup("\n[error] Something went VERY WRONG");
+	fprintf(stderr, "[bench] disorder: %f%%\n", disorder * 100);
 	fprintf(stderr, "[bench] strategy: %s\n", strat_string);
 }
 

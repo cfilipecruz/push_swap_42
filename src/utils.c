@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 17:59:41 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/05 01:45:44 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/06 17:11:29 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_error(void)
 {
-	write(2, "Error\n", 6);
+	fprintf(stderr, "Error\n");
 }
 
 int	error_exit(t_node *stack_a, t_node *stack_b)

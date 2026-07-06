@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 13:37:03 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/06 15:47:34 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 15:52:14 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ static int	parse_args(int argc, char **argv, t_node **stack_a,
 	int	flag;
 
 	i = 0;
-	flag = 0;
 	while (++i < argc)
 	{
 		if (is_flag(argv[i]))

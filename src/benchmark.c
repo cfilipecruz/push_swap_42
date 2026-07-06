@@ -6,7 +6,7 @@
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 01:48:23 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/06 14:55:27 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 15:01:14 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,11 @@ static void	benchmark_end(int *moves, int is_on)
 	if (is_on != 1)
 		return ;
 	fprintf(stderr, "[bench] total_ops: %d\n", total_moves(moves));
-	fprintf(stderr, "[bench] sa: %d  sb: %d  ss: %d  pa: %d  pb: %d\n", 
-			moves[0], moves[1], moves[2], moves[3], moves[4]);
-	fprintf(stderr, "[bench] ra: %d  rb: %d  rr: %d  rra: %d  rrb: %d  rrr: %d\n", 
-			moves[5], moves[6], moves[7], moves[8], moves[9], moves[10]);
+	fprintf(stderr, "[bench] sa: %d  sb: %d  ss: %d  pa: %d  pb: %d\n",
+		moves[0], moves[1], moves[2], moves[3], moves[4]);
+	fprintf(stderr,
+		"[bench] ra: %d  rb: %d  rr: %d  rra: %d  rrb: %d  rrr: %d\n",
+		moves[5], moves[6], moves[7], moves[8], moves[9], moves[10]);
 }
 
 void	benchmark_start(double disorder, t_strategy strat)
@@ -80,7 +81,6 @@ void	benchmark_start(double disorder, t_strategy strat)
 		else
 			strat_string = ft_strdup("Adaptive / O(n log n)");
 	}
-
 	fprintf(stderr, "[bench] disorder: %.2f\n", disorder);
 	fprintf(stderr, "[bench] strategy: %s\n", strat_string);
 }
@@ -102,4 +102,3 @@ void	benchmark(const char *move)
 		append_move_to_list(moves, move);
 	}
 }
-

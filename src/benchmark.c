@@ -6,7 +6,7 @@
 /*   By: joavieir <joavieir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 01:48:23 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/06 19:05:48 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 19:25:55 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,12 @@ void	benchmark_start(double disorder, t_strategy strat)
 	}
 	else
 		strat_string = ft_strdup("\n[error] Something went VERY WRONG");
-	ft_printf(2, "[bench] disorder: %d.%d%%\n", (int) (disorder * 100), (int) (disorder * 10000) % 100);
+	ft_printf(2, "[bench] disorder: %d.%d%%\n",
+			(int)(disorder * 100), (int)(disorder * 10000) % 100);
 	ft_printf(2, "[bench] strategy: %s\n", strat_string);
+	free(strat_string);
 }
+
 void	benchmark(const char *move)
 {
 	static int	is_on;

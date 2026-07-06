@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 13:37:03 by cmarques          #+#    #+#             */
-/*   Updated: 2026/07/06 17:27:59 by joavieir         ###   ########.fr       */
+/*   Updated: 2026/07/06 19:28:21 by joavieir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ static int	run_algo(t_node **stack_a, t_node **stack_b,
 {
 	int	ret;
 
-	if (options.bench == MODE_BENCH)
-		benchmark_start(disorder, options.strat);
 	if (is_sorted(*stack_a))
 		return (1);
+	if (options.bench == MODE_BENCH)
+		benchmark_start(disorder, options.strat);
 	if (stack_size(*stack_a) == 2)
 		ret = ra(stack_a);
 	else if (options.strat == STRATEGY_SIMPLE || stack_size(*stack_a) <= 5)
@@ -104,6 +104,8 @@ int	exec_stack(int argc, char **argv, t_node **stack_a, t_node **stack_b)
 	if (argc < 2)
 		return (-1);
 	if (!parse_args(argc, argv, stack_a, &options))
+		return (0);
+	if (stack_size(*stack_a) == 0)
 		return (0);
 	if (options.strat == (t_strategy) MODE_INVALID)
 		options.strat = STRATEGY_ADAPTIVE;

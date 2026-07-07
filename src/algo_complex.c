@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:50:24 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/05 01:35:16 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/07 22:16:00 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	algo_complex(t_node **stack_a, t_node **stack_b)
 	int	bits;
 
 	size = stack_size(*stack_a);
+	if (size <= 5)
+		return (algo_simple(stack_a, stack_b));
 	temp_ranks = get_ranks(*stack_a, size);
 	if (!temp_ranks)
 		return (0);

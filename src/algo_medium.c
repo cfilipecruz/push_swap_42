@@ -6,7 +6,7 @@
 /*   By: cmarques <cmarques@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 18:50:24 by joavieir          #+#    #+#             */
-/*   Updated: 2026/07/05 01:59:48 by cmarques         ###   ########.fr       */
+/*   Updated: 2026/07/07 22:15:44 by cmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ int	algo_medium(t_node **stack_a, t_node **stack_b)
 	int	size;
 
 	size = stack_size(*stack_a);
+	if (size <= 5)
+		return (algo_simple(stack_a, stack_b));
 	chunk_size = ft_sqrt(size);
 	temp_ranks = get_ranks(*stack_a, size);
 	if (!temp_ranks)
